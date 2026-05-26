@@ -1,0 +1,1124 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DevEarn — Talents IT &amp; projets réels</title>
+  <meta name="description" content="DevEarn connecte les étudiants IT et les entreprises autour de missions réelles et rémunérées." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./css/global.css" />
+  <link rel="stylesheet" href="./css/home.css" />
+</head>
+
+<body class="home-page">
+  <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand-wrapper" style="display: flex; align-items: center; gap: 12px;">
+        <a href="./index.html" class="brand" aria-label="Accueil DevEarn">
+          <span class="brand-mark" aria-hidden="true">
+            <span class="brand-dev">Dev</span><span class="brand-amp">&amp;</span><span class="brand-earn">Earn</span>
+          </span>
+        </a>
+        <span style="color: var(--text-muted); opacity: 0.3; font-weight: 300; font-size: 1.2rem; user-select: none;">|</span>
+        <div class="header-partner-logos" style="display: flex; align-items: center; gap: 8px;">
+          <img src="./assets/images/INPT.svg" alt="INPT" class="header-cri-logo" style="height: 22px;" />
+          <span style="color: var(--text-muted); opacity: 0.2; font-weight: 300; font-size: 0.9rem; user-select: none;">×</span>
+          <img src="./assets/images/ANRT.svg" alt="ANRT" class="header-cri-logo" style="height: 22px;" />
+          <span style="color: var(--text-muted); opacity: 0.2; font-weight: 300; font-size: 0.9rem; user-select: none;">×</span>
+          <img src="./assets/images/Centre régional d'investissement - Maroc.svg" alt="CRI Maroc" class="header-cri-logo" style="height: 22px;" />
+        </div>
+      </div>
+      <nav class="main-nav" aria-label="Navigation principale">
+        <button class="nav-toggle" type="button" aria-label="Ouvrir le menu">
+          <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-list">
+          <li><a href="./index.html" class="is-current">Accueil</a></li>
+          <li><a href="./projects.html">Projets</a></li>
+          <li><a href="./student-space.html">Étudiants</a></li>
+          <li><a href="./client-space.html">Entreprises</a></li>
+          <li><a href="./dashboard.html">Dashboard</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <button class="theme-toggle" type="button" aria-label="Basculer le thème">
+          <span class="theme-toggle-icon">◐</span>
+        </button>
+        <button type="button" class="btn btn-ghost" data-open-modal="login-modal">Connexion</button>
+        <button type="button" class="btn btn-primary" data-open-modal="register-modal">Inscription</button>
+      </div>
+    </div>
+  </header>
+
+  </header>
+
+  <main id="main-content">
+
+    <!-- 1. ACCUEIL SECTION -->
+    <div id="accueil-section" class="app-section is-active">
+      <!-- MARQUEE ENTREPRISES EN HAUT AVEC MOUVEMENT GAUCHE VERS DROITE INFINI -->
+      <section class="partners-section top-marquee" aria-label="Entreprises partenaires">
+        <div class="marquee-wrapper">
+          <div class="marquee-track marquee-right">
+            <div class="marquee-content">
+              <img src="./assets/images/ENTR/Attijariwafa Bank.svg" alt="Attijariwafa Bank" class="partner-logo" />
+              <img src="./assets/images/ENTR/BCP  Banque Populaire du Maroc.svg" alt="Banque Populaire" class="partner-logo" />
+              <img src="./assets/images/ENTR/BNP Paribas.svg" alt="BNP Paribas" class="partner-logo" />
+              <img src="./assets/images/ENTR/Bank al maghrib بنك المغرب.svg" alt="Bank Al Maghrib" class="partner-logo" />
+              <img src="./assets/images/ENTR/CDG.svg" alt="CDG" class="partner-logo" />
+              <img src="./assets/images/ENTR/CIH Bank.svg" alt="CIH Bank" class="partner-logo" />
+              <img src="./assets/images/ENTR/Inwi.svg" alt="Inwi" class="partner-logo" />
+              <img src="./assets/images/ENTR/Maroc Telecom Logo (2025).svg" alt="Maroc Telecom" class="partner-logo" />
+              <img src="./assets/images/ENTR/Orange.svg" alt="Orange" class="partner-logo" />
+              <img src="./assets/images/ENTR/Safran.svg" alt="Safran" class="partner-logo" />
+              <img src="./assets/images/ENTR/bank of africa logo.svg" alt="Bank of Africa" class="partner-logo" />
+              <img src="./assets/images/ENTR/cfg bank.svg" alt="CFG Bank" class="partner-logo" />
+              <img src="./assets/images/ENTR/TGCC.svg" alt="TGCC" class="partner-logo" />
+              <img src="./assets/images/ENTR/Dsys Maroc.svg" alt="Dsys Maroc" class="partner-logo" />
+              <img src="./assets/images/ENTR/Socotec.svg" alt="Socotec" class="partner-logo" />
+            </div>
+            <!-- Duplicate for seamless loop -->
+            <div class="marquee-content" aria-hidden="true">
+              <img src="./assets/images/ENTR/Attijariwafa Bank.svg" alt="" class="partner-logo" />
+              <img src="./assets/images/ENTR/BCP  Banque Populaire du Maroc.svg" alt="" class="partner-logo" />
+              <img src="./assets/images/ENTR/BNP Paribas.svg" alt="" class="partner-logo" />
+              <img src="./assets/images/ENTR/Bank al maghrib بنك المغرب.svg" alt="" class="partner-logo" />
+              <img src="./assets/images/ENTR/CDG.svg" alt="" class="partner-logo" />
+              <img src="./assets/images/ENTR/CIH Bank.svg" alt="" class="partner-logo" />
+              <img src="./assets/images/ENTR/Inwi.svg" alt="" class="partner-logo" />
+              <img src="./assets/images/ENTR/Maroc Telecom Logo (2025).svg" alt="" class="partner-logo" />
+              <img src="./assets/images/ENTR/Orange.svg" alt="" class="partner-logo" />
+              <img src="./assets/images/ENTR/Safran.svg" alt="" class="partner-logo" />
+              <img src="./assets/images/ENTR/bank of africa logo.svg" alt="" class="partner-logo" />
+              <img src="./assets/images/ENTR/cfg bank.svg" alt="" class="partner-logo" />
+              <img src="./assets/images/ENTR/TGCC.svg" alt="" class="partner-logo" />
+              <img src="./assets/images/ENTR/Dsys Maroc.svg" alt="" class="partner-logo" />
+              <img src="./assets/images/ENTR/Socotec.svg" alt="" class="partner-logo" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- HERO -->
+      <section class="hero-section">
+        <div class="hero-backdrop"></div>
+        <div class="container hero-content-centered">
+          <p class="hero-eyebrow">La plateforme IT marocaine</p>
+          <div class="hero-typed-box">
+            <div class="hero-slogan-wrap">
+              <div class="hero-slogan-line">
+                <h1 id="typed-slogan" class="typed-slogan"></h1>
+                <div id="hero-logos-container" class="hero-powered-logos" aria-hidden="true">
+                  <span class="hero-inline-logo-wrap">
+                    <img src="./assets/images/INPT.svg" alt="INPT" class="hero-inline-logo" />
+                  </span>
+                  <span class="hero-logo-sep">×</span>
+                  <span class="hero-inline-logo-wrap">
+                    <img src="./assets/images/ANRT.svg" alt="ANRT" class="hero-inline-logo" />
+                  </span>
+                  <span class="hero-logo-sep">×</span>
+                  <span class="hero-inline-logo-wrap hero-inline-logo-wide">
+                    <img src="./assets/images/Centre régional d'investissement - Maroc.svg" alt="CRI Maroc" class="hero-inline-logo" />
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p class="hero-subtitle">Projets réels · Talents vérifiés · Résultats concrets</p>
+          <div class="hero-actions">
+            <button type="button" class="btn-hero" data-nav-to="students">
+              Espace Étudiant
+              <span class="btn-hero-arrow">→</span>
+            </button>
+            <button type="button" class="btn-hero btn-hero-outline" data-nav-to="clients">
+              Espace Entreprise
+              <span class="btn-hero-arrow">→</span>
+            </button>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- 2. PROJECTS SECTION -->
+    <div id="projects-section" class="app-section">
+      <!-- HERO PROJETS -->
+      <section class="page-hero">
+        <div class="container page-hero-inner">
+          <p class="page-hero-eyebrow">Missions disponibles</p>
+          <div class="page-typed-box">
+            <h1 id="typed-projects" class="page-typed-slogan" data-typed-phrase="Des missions réelles pour des talents d'exception."></h1>
+          </div>
+          <p class="page-hero-sub">Filtrez par catégorie ou niveau · Postulez en un clic · Commencez à gagner dès maintenant.</p>
+                    
+          <!-- Action Buttons -->
+          <div class="hero-actions">
+            <button type="button" class="btn-hero" data-open-modal="post-project-modal">
+              Déposer un projet
+              <span class="btn-hero-arrow">→</span>
+            </button>
+            <button type="button" class="btn-hero btn-hero-outline scroll-trigger" data-scroll-to="projects-content">
+              Découvrir les projets disponibles
+            </button>
+          </div>
+          
+          <div class="kpi-strip-grid" style="width: 100%; margin-top: 12px;">
+            <div class="kpi-strip-card">
+              <strong class="kpi-strip-val count-up" data-target="126" data-suffix="+">0</strong>
+              <span class="kpi-strip-label">Projets actifs</span>
+            </div>
+            <div class="kpi-strip-sep"></div>
+            <div class="kpi-strip-card">
+              <strong class="kpi-strip-val count-up" data-target="22" data-suffix="k MAD">0</strong>
+              <span class="kpi-strip-label">Budget moyen</span>
+            </div>
+            <div class="kpi-strip-sep"></div>
+            <div class="kpi-strip-card">
+              <strong class="kpi-strip-val count-up" data-target="93" data-suffix="%">0</strong>
+              <span class="kpi-strip-label">Taux de succès</span>
+            </div>
+            <div class="kpi-strip-sep"></div>
+            <div class="kpi-strip-card">
+              <strong class="kpi-strip-val count-up" data-target="4.8" data-decimals="1" data-suffix=" j">0</strong>
+              <span class="kpi-strip-label">Délai de match moyen</span>
+            </div>
+            <div class="kpi-strip-sep"></div>
+            <div class="kpi-strip-card">
+              <strong class="kpi-strip-val count-up" data-target="482" data-suffix="+">0</strong>
+              <span class="kpi-strip-label">Projets complétés</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FILTRES -->
+      <section id="projects-content" class="filters-section" style="padding-bottom: 24px;">
+        <div class="container">
+          <div class="filters-bar">
+            <div class="filters-group">
+              <button class="filter-chip is-active" data-filter="all">Tous</button>
+              <button class="filter-chip" data-filter="web">Web</button>
+              <button class="filter-chip" data-filter="data">Data / IA</button>
+              <button class="filter-chip" data-filter="design">Design UI/UX</button>
+              <button class="filter-chip" data-filter="cyber">Cybersécurité</button>
+              <button class="filter-chip" data-filter="automation">Automatisation</button>
+            </div>
+            <div class="filters-group">
+              <button class="filter-chip level-chip is-active" data-level="all">Tous niveaux</button>
+              <button class="filter-chip level-chip" data-level="junior">Junior</button>
+              <button class="filter-chip level-chip" data-level="intermediate">Intermédiaire</button>
+              <button class="filter-chip level-chip" data-level="advanced">Avancé</button>
+            </div>
+          </div>
+          <span class="results-counter" id="results-counter">10 projets affichés</span>
+        </div>
+      </section>
+
+      <!-- GRILLE PROJETS -->
+      <section class="trending-projects" style="padding-bottom: 80px;">
+        <div class="container">
+          <div class="projects-grid" id="projects-grid">
+            
+            <article class="project-card glass-card" data-category="data" data-level="advanced">
+              <div class="project-top">
+                <div class="project-company-info">
+                  <img src="./assets/images/ENTR/Attijariwafa Bank.svg" alt="Attijariwafa Bank" class="project-company-logo" />
+                  <span class="project-company-name">Attijariwafa Bank</span>
+                </div>
+                <span class="project-rating">4.9 ★</span>
+              </div>
+              <h3>Pipeline de scoring crédit &amp; ML</h3>
+              <p>Conception d'un modèle d'évaluation de risque de défaut avec pipeline d'intégration de données et rapport KPI interactif.</p>
+              <div class="project-meta">
+                <span>Data / IA</span><span>·</span><span>Avancé</span>
+              </div>
+              <div class="project-footer">
+                <span class="project-budget">25k - 40k MAD</span>
+                <button type="button" class="btn btn-outline btn-sm" data-open-modal="login-modal">Postuler</button>
+              </div>
+            </article>
+
+            <article class="project-card glass-card" data-category="design" data-level="intermediate">
+              <div class="project-top">
+                <div class="project-company-info">
+                  <img src="./assets/images/ENTR/Orange.svg" alt="Orange" class="project-company-logo" />
+                  <span class="project-company-name">Orange Maroc</span>
+                </div>
+                <span class="project-rating">4.8 ★</span>
+              </div>
+              <h3>Refonte UX/UI application MyOrange</h3>
+              <p>Modernisation des parcours utilisateurs, création d'un design system complet sous Figma et prototypes interactifs de haute fidélité.</p>
+              <div class="project-meta">
+                <span>Design UI/UX</span><span>·</span><span>Intermédiaire</span>
+              </div>
+              <div class="project-footer">
+                <span class="project-budget">15k - 20k MAD</span>
+                <button type="button" class="btn btn-outline btn-sm" data-open-modal="login-modal">Postuler</button>
+              </div>
+            </article>
+
+            <article class="project-card glass-card" data-category="cyber" data-level="advanced">
+              <div class="project-top">
+                <div class="project-company-info">
+                  <img src="./assets/images/ENTR/CIH Bank.svg" alt="CIH Bank" class="project-company-logo" />
+                  <span class="project-company-name">CIH Bank</span>
+                </div>
+                <span class="project-rating">4.9 ★</span>
+              </div>
+              <h3>Audit de sécurité &amp; Pentesting web</h3>
+              <p>Audit approfondi des vulnérabilités OWASP sur notre nouveau portail de paiement et rédaction d'un plan de remédiation complet.</p>
+              <div class="project-meta">
+                <span>Cybersécurité</span><span>·</span><span>Avancé</span>
+              </div>
+              <div class="project-footer">
+                <span class="project-budget">30k - 50k MAD</span>
+                <button type="button" class="btn btn-outline btn-sm" data-open-modal="login-modal">Postuler</button>
+              </div>
+            </article>
+
+            <article class="project-card glass-card" data-category="web" data-level="intermediate">
+              <div class="project-top">
+                <div class="project-company-info">
+                  <img src="./assets/images/ENTR/BCP  Banque Populaire du Maroc.svg" alt="Banque Populaire" class="project-company-logo" />
+                  <span class="project-company-name">Banque Populaire</span>
+                </div>
+                <span class="project-rating">4.7 ★</span>
+              </div>
+              <h3>Portail Web de Microfinance</h3>
+              <p>Développement en React/Node.js d'un portail web dynamique permettant la gestion et le suivi des demandes de micro-crédits.</p>
+              <div class="project-meta">
+                <span>Développement Web</span><span>·</span><span>Intermédiaire</span>
+              </div>
+              <div class="project-footer">
+                <span class="project-budget">18k - 25k MAD</span>
+                <button type="button" class="btn btn-outline btn-sm" data-open-modal="login-modal">Postuler</button>
+              </div>
+            </article>
+
+            <article class="project-card glass-card" data-category="data" data-level="intermediate">
+              <div class="project-top">
+                <div class="project-company-info">
+                  <img src="./assets/images/ENTR/CDG.svg" alt="CDG" class="project-company-logo" />
+                  <span class="project-company-name">CDG Maroc</span>
+                </div>
+                <span class="project-rating">4.8 ★</span>
+              </div>
+              <h3>Dashboard de suivi des investissements</h3>
+              <p>Création d'un tableau de bord décisionnel PowerBI connecté à un entrepôt de données SQL pour le suivi des fonds durables.</p>
+              <div class="project-meta">
+                <span>Data / IA</span><span>·</span><span>Intermédiaire</span>
+              </div>
+              <div class="project-footer">
+                <span class="project-budget">12k - 18k MAD</span>
+                <button type="button" class="btn btn-outline btn-sm" data-open-modal="login-modal">Postuler</button>
+              </div>
+            </article>
+
+            <article class="project-card glass-card" data-category="web" data-level="junior">
+              <div class="project-top">
+                <div class="project-company-info">
+                  <img src="./assets/images/ENTR/Maroc Telecom Logo (2025).svg" alt="Maroc Telecom" class="project-company-logo" />
+                  <span class="project-company-name">Maroc Telecom</span>
+                </div>
+                <span class="project-rating">4.5 ★</span>
+              </div>
+              <h3>Portail d'abonnement Fibre Optique</h3>
+              <p>Intégration d'un mini-site dynamique d'inscription et de vérification d'éligibilité géographique à la fibre avec carte interactive.</p>
+              <div class="project-meta">
+                <span>Développement Web</span><span>·</span><span>Junior</span>
+              </div>
+              <div class="project-footer">
+                <span class="project-budget">8k - 12k MAD</span>
+                <button type="button" class="btn btn-outline btn-sm" data-open-modal="login-modal">Postuler</button>
+              </div>
+            </article>
+
+            <article class="project-card glass-card" data-category="data" data-level="advanced">
+              <div class="project-top">
+                <div class="project-company-info">
+                  <img src="./assets/images/ENTR/Safran.svg" alt="Safran" class="project-company-logo" />
+                  <span class="project-company-name">Safran Maroc</span>
+                </div>
+                <span class="project-rating">4.9 ★</span>
+              </div>
+              <h3>Optimisation de maintenance prédictive</h3>
+              <p>Mise en place d'un modèle d'apprentissage supervisé pour prédire l'usure de pièces moteur à partir de données de capteurs IoT.</p>
+              <div class="project-meta">
+                <span>Data / IA</span><span>·</span><span>Avancé</span>
+              </div>
+              <div class="project-footer">
+                <span class="project-budget">35k - 50k MAD</span>
+                <button type="button" class="btn btn-outline btn-sm" data-open-modal="login-modal">Postuler</button>
+              </div>
+            </article>
+
+            <article class="project-card glass-card" data-category="automation" data-level="junior">
+              <div class="project-top">
+                <div class="project-company-info">
+                  <img src="./assets/images/ENTR/TGCC.svg" alt="TGCC" class="project-company-logo" />
+                  <span class="project-company-name">TGCC</span>
+                </div>
+                <span class="project-rating">4.6 ★</span>
+              </div>
+              <h3>Automatisation de rapports de chantier</h3>
+              <p>Script d'extraction automatique d'images et données de formulaire terrain vers un modèle de rapport PDF consolidé envoyé par mail.</p>
+              <div class="project-meta">
+                <span>Automatisation</span><span>·</span><span>Junior</span>
+              </div>
+              <div class="project-footer">
+                <span class="project-budget">6k - 10k MAD</span>
+                <button type="button" class="btn btn-outline btn-sm" data-open-modal="login-modal">Postuler</button>
+              </div>
+            </article>
+
+            <article class="project-card glass-card" data-category="web" data-level="junior">
+              <div class="project-top">
+                <div class="project-company-info">
+                  <img src="./assets/images/ENTR/Dsys Maroc.svg" alt="Dsys Maroc" class="project-company-logo" />
+                  <span class="project-company-name">Dsys Maroc</span>
+                </div>
+                <span class="project-rating">4.6 ★</span>
+              </div>
+              <h3>Mini-site d'événements IT marocains</h3>
+              <p>Développement d'une single page application vitrine avec formulaire d'inscription et intégration du planning des conférences.</p>
+              <div class="project-meta">
+                <span>Développement Web</span><span>·</span><span>Junior</span>
+              </div>
+              <div class="project-footer">
+                <span class="project-budget">5k - 8k MAD</span>
+                <button type="button" class="btn btn-outline btn-sm" data-open-modal="login-modal">Postuler</button>
+              </div>
+            </article>
+
+            <article class="project-card glass-card" data-category="cyber" data-level="advanced">
+              <div class="project-top">
+                <div class="project-company-info">
+                  <img src="./assets/images/ENTR/bank of africa logo.svg" alt="Bank Of Africa" class="project-company-logo" />
+                  <span class="project-company-name">Bank Of Africa</span>
+                </div>
+                <span class="project-rating">4.8 ★</span>
+              </div>
+              <h3>Mise en conformité sécurité API bancaires</h3>
+              <p>Audit d'architecture, analyse des entêtes HTTP et renforcement de l'authentification OAuth2 sur l'ensemble de nos endpoints.</p>
+              <div class="project-meta">
+                <span>Cybersécurité</span><span>·</span><span>Avancé</span>
+              </div>
+              <div class="project-footer">
+                <span class="project-budget">30k - 45k MAD</span>
+                <button type="button" class="btn btn-outline btn-sm" data-open-modal="login-modal">Postuler</button>
+              </div>
+            </article>
+
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- 3. STUDENTS SECTION -->
+    <div id="students-section" class="app-section">
+      <!-- HERO ÉTUDIANTS -->
+      <section class="page-hero">
+        <div class="container page-hero-inner">
+          <p class="page-hero-eyebrow">Espace Talents</p>
+          <div class="page-typed-box">
+            <h1 id="typed-students" class="page-typed-slogan" data-typed-phrase="Votre talent mérite d'être reconnu."></h1>
+          </div>
+          <p class="page-hero-sub">Découvrez les profils d'étudiants IT les plus performants, notés et recommandés.</p>
+          
+          <!-- Action Buttons -->
+          <div class="hero-actions">
+            <button type="button" class="btn-hero" data-open-modal="register-modal">
+              S'inscrire en tant qu'étudiant
+              <span class="btn-hero-arrow">→</span>
+            </button>
+            <button type="button" class="btn-hero btn-hero-outline scroll-trigger" data-scroll-to="students-content">
+              Découvrir les meilleurs étudiants
+            </button>
+          </div>
+
+          <div class="kpi-grid" style="margin-top: 12px;">
+            <article class="kpi-card glass-card">
+              <span class="kpi-label">Étudiants actifs</span>
+              <strong class="kpi-value count-up" data-target="1240" data-suffix="+">0</strong>
+              <p>Sur l'ensemble du Maroc</p>
+            </article>
+            <article class="kpi-card glass-card">
+              <span class="kpi-label">Note moyenne</span>
+              <strong class="kpi-value count-up" data-target="4.88" data-decimals="2" data-suffix=" ★">0</strong>
+              <p>Évaluation par les entreprises</p>
+            </article>
+            <article class="kpi-card glass-card">
+              <span class="kpi-label">Projets complétés</span>
+              <strong class="kpi-value count-up" data-target="482" data-suffix="+">0</strong>
+              <p>Missions réelles validées</p>
+            </article>
+            <article class="kpi-card glass-card">
+              <span class="kpi-label">Taux de réussite</span>
+              <strong class="kpi-value count-up" data-target="96.4" data-decimals="1" data-suffix="%">0</strong>
+              <p>Livrables acceptés à temps</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- CLASSEMENT TABLEAU ÉTUDIANTS -->
+      <section id="students-content" class="student-ranking" style="padding-bottom: 80px;">
+        <div class="container">
+          <div class="panel-card glass-card" style="padding: clamp(20px, 4vw, 32px); border-radius: var(--radius-xl);">
+            <div class="panel-header" style="margin-bottom: 24px;">
+              <div>
+                <span class="section-chip">Classement</span>
+                <h2>Top Talents IT Classés par Ratio de Performance</h2>
+              </div>
+            </div>
+            <div class="table-container" style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
+              <table class="premium-table">
+                <thead>
+                  <tr>
+                    <th>Rang</th>
+                    <th>Étudiant</th>
+                    <th>Spécialité</th>
+                    <th style="text-align: center;">Projets Réalisés</th>
+                    <th style="text-align: center;">Note Globale</th>
+                    <th>Badges Actifs</th>
+                    <th style="text-align: right;">Score d'XP</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td style="font-weight: 700; color: var(--primary);">#1</td>
+                    <td>
+                      <div class="student-row-info">
+                        <div class="student-row-avatar">IB</div>
+                        <span class="student-row-name">Ilyas Bejja</span>
+                      </div>
+                    </td>
+                    <td>ML Engineer / Data Science</td>
+                    <td style="text-align: center; font-weight: 600;">18</td>
+                    <td style="text-align: center; color: var(--primary); font-weight: 700;">4.94 ★</td>
+                    <td>
+                      <span class="badge-tag highlight">Top Rated</span>
+                      <span class="badge-tag">NLP Expert</span>
+                    </td>
+                    <td style="text-align: right; font-weight: 700;">2,420 XP</td>
+                  </tr>
+                  <tr>
+                    <td style="font-weight: 700; color: var(--primary);">#2</td>
+                    <td>
+                      <div class="student-row-info">
+                        <div class="student-row-avatar alt">SA</div>
+                        <span class="student-row-name">Salma Ait</span>
+                      </div>
+                    </td>
+                    <td>UX/UI Designer / Product</td>
+                    <td style="text-align: center; font-weight: 600;">15</td>
+                    <td style="text-align: center; color: var(--primary); font-weight: 700;">4.89 ★</td>
+                    <td>
+                      <span class="badge-tag highlight">Reliable</span>
+                      <span class="badge-tag">Creative</span>
+                    </td>
+                    <td style="text-align: right; font-weight: 700;">2,150 XP</td>
+                  </tr>
+                  <tr>
+                    <td style="font-weight: 700; color: var(--primary);">#3</td>
+                    <td>
+                      <div class="student-row-info">
+                        <div class="student-row-avatar">YM</div>
+                        <span class="student-row-name">Youssef M.</span>
+                      </div>
+                    </td>
+                    <td>Full Stack Dev / Automation</td>
+                    <td style="text-align: center; font-weight: 600;">14</td>
+                    <td style="text-align: center; color: var(--primary); font-weight: 700;">4.85 ★</td>
+                    <td>
+                      <span class="badge-tag highlight">Fast Responder</span>
+                    </td>
+                    <td style="text-align: right; font-weight: 700;">1,980 XP</td>
+                  </tr>
+                  <tr>
+                    <td style="font-weight: 700;">#4</td>
+                    <td>
+                      <div class="student-row-info">
+                        <div class="student-row-avatar alt">KB</div>
+                        <span class="student-row-name">Karim Bensalah</span>
+                      </div>
+                    </td>
+                    <td>Cybersécurité Expert</td>
+                    <td style="text-align: center; font-weight: 600;">11</td>
+                    <td style="text-align: center; color: var(--primary); font-weight: 700;">4.90 ★</td>
+                    <td>
+                      <span class="badge-tag">Security Star</span>
+                    </td>
+                    <td style="text-align: right; font-weight: 700;">1,720 XP</td>
+                  </tr>
+                  <tr>
+                    <td style="font-weight: 700;">#5</td>
+                    <td>
+                      <div class="student-row-info">
+                        <div class="student-row-avatar">ST</div>
+                        <span class="student-row-name">Sofia Tazi</span>
+                      </div>
+                    </td>
+                    <td>Data Analyst / BI</td>
+                    <td style="text-align: center; font-weight: 600;">9</td>
+                    <td style="text-align: center; color: var(--primary); font-weight: 700;">4.82 ★</td>
+                    <td>
+                      <span class="badge-tag">Data Driven</span>
+                    </td>
+                    <td style="text-align: right; font-weight: 700;">1,450 XP</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- 4. ENTREPRISES SECTION -->
+    <div id="clients-section" class="app-section">
+      <!-- HERO ENTREPRISES -->
+      <section class="page-hero">
+        <div class="container page-hero-inner">
+          <p class="page-hero-eyebrow">Partenaires Tech</p>
+          <div class="page-typed-box">
+            <h1 id="typed-clients" class="page-typed-slogan" data-typed-phrase="Les entreprises qui font confiance à nos talents."></h1>
+          </div>
+          <p class="page-hero-sub">Découvrez les entreprises leaders classées par volume de projets et étudiants engagés.</p>
+          
+          <!-- Action Buttons -->
+          <div class="hero-actions">
+            <button type="button" class="btn-hero" data-open-modal="register-modal">
+              S'inscrire en tant qu'entreprise
+              <span class="btn-hero-arrow">→</span>
+            </button>
+            <button type="button" class="btn-hero btn-hero-outline scroll-trigger" data-scroll-to="clients-content">
+              Découvrir les entreprises partenaires
+            </button>
+          </div>
+
+          <div class="kpi-grid" style="margin-top: 12px;">
+            <article class="kpi-card glass-card">
+              <span class="kpi-label">Entreprises actives</span>
+              <strong class="kpi-value count-up" data-target="85" data-suffix="+">0</strong>
+              <p>Banques, Télécoms, Industries</p>
+            </article>
+            <article class="kpi-card glass-card">
+              <span class="kpi-label">Projets publiés</span>
+              <strong class="kpi-value count-up" data-target="126" data-suffix="+">0</strong>
+              <p>Missions réelles déposées</p>
+            </article>
+            <article class="kpi-card glass-card">
+              <span class="kpi-label">Budget distribué</span>
+              <strong class="kpi-value count-up" data-target="1.8" data-decimals="1" data-suffix="M MAD">0</strong>
+              <p>Rémunération directe talents</p>
+            </article>
+            <article class="kpi-card glass-card">
+              <span class="kpi-label">Satisfaction</span>
+              <strong class="kpi-value count-up" data-target="4.92" data-decimals="2" data-suffix=" ★">0</strong>
+              <p>Moyenne globale recruteurs</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- TABLEAU ENTREPRISES -->
+      <section id="clients-content" class="company-ranking" style="padding-bottom: 80px;">
+        <div class="container">
+          <div class="panel-card glass-card" style="padding: clamp(20px, 4vw, 32px); border-radius: var(--radius-xl);">
+            <div class="panel-header" style="margin-bottom: 24px;">
+              <div>
+                <span class="section-chip">Partenaires</span>
+                <h2>Classement des Entreprises les plus Actives</h2>
+              </div>
+            </div>
+            <div class="table-container" style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
+              <table class="premium-table">
+                <thead>
+                  <tr>
+                    <th>Rang</th>
+                    <th>Entreprise</th>
+                    <th style="text-align: center;">Projets Proposés</th>
+                    <th style="text-align: center;">Projets Réalisés</th>
+                    <th style="text-align: center;">Étudiants Engagés</th>
+                    <th style="text-align: center;">Note Recruteur</th>
+                    <th style="text-align: right;">Volume Budget</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td style="font-weight: 700; color: var(--primary);">#1</td>
+                    <td>
+                      <div class="student-row-info">
+                        <img src="./assets/images/ENTR/Orange.svg" alt="Orange" style="height: 22px; width: auto;" />
+                        <span class="student-row-name">Orange Maroc</span>
+                      </div>
+                    </td>
+                    <td style="text-align: center; font-weight: 600;">12</td>
+                    <td style="text-align: center; font-weight: 600;">9</td>
+                    <td style="text-align: center; font-weight: 600;">15</td>
+                    <td style="text-align: center; color: var(--primary); font-weight: 700;">4.9 ★</td>
+                    <td style="text-align: right; font-weight: 700;">220,000 MAD</td>
+                  </tr>
+                  <tr>
+                    <td style="font-weight: 700; color: var(--primary);">#2</td>
+                    <td>
+                      <div class="student-row-info">
+                        <img src="./assets/images/ENTR/Attijariwafa Bank.svg" alt="Attijariwafa" style="height: 22px; width: auto;" />
+                        <span class="student-row-name">Attijariwafa Bank</span>
+                      </div>
+                    </td>
+                    <td style="text-align: center; font-weight: 600;">8</td>
+                    <td style="text-align: center; font-weight: 600;">6</td>
+                    <td style="text-align: center; font-weight: 600;">10</td>
+                    <td style="text-align: center; color: var(--primary); font-weight: 700;">4.8 ★</td>
+                    <td style="text-align: right; font-weight: 700;">180,000 MAD</td>
+                  </tr>
+                  <tr>
+                    <td style="font-weight: 700; color: var(--primary);">#3</td>
+                    <td>
+                      <div class="student-row-info">
+                        <img src="./assets/images/ENTR/Safran.svg" alt="Safran" style="height: 22px; width: auto;" />
+                        <span class="student-row-name">Safran Maroc</span>
+                      </div>
+                    </td>
+                    <td style="text-align: center; font-weight: 600;">6</td>
+                    <td style="text-align: center; font-weight: 600;">4</td>
+                    <td style="text-align: center; font-weight: 600;">8</td>
+                    <td style="text-align: center; color: var(--primary); font-weight: 700;">4.9 ★</td>
+                    <td style="text-align: right; font-weight: 700;">150,000 MAD</td>
+                  </tr>
+                  <tr>
+                    <td style="font-weight: 700;">#4</td>
+                    <td>
+                      <div class="student-row-info">
+                        <img src="./assets/images/ENTR/Inwi.svg" alt="Inwi" style="height: 22px; width: auto;" />
+                        <span class="student-row-name">Inwi</span>
+                      </div>
+                    </td>
+                    <td style="text-align: center; font-weight: 600;">9</td>
+                    <td style="text-align: center; font-weight: 600;">7</td>
+                    <td style="text-align: center; font-weight: 600;">12</td>
+                    <td style="text-align: center; color: var(--primary); font-weight: 700;">4.7 ★</td>
+                    <td style="text-align: right; font-weight: 700;">130,000 MAD</td>
+                  </tr>
+                  <tr>
+                    <td style="font-weight: 700;">#5</td>
+                    <td>
+                      <div class="student-row-info">
+                        <img src="./assets/images/ENTR/CDG.svg" alt="CDG" style="height: 22px; width: auto;" />
+                        <span class="student-row-name">CDG</span>
+                      </div>
+                    </td>
+                    <td style="text-align: center; font-weight: 600;">5</td>
+                    <td style="text-align: center; font-weight: 600;">4</td>
+                    <td style="text-align: center; font-weight: 600;">6</td>
+                    <td style="text-align: center; color: var(--primary); font-weight: 700;">4.8 ★</td>
+                    <td style="text-align: right; font-weight: 700;">110,000 MAD</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- 5. DASHBOARD SECTION -->
+    <div id="dashboard-section" class="app-section">
+      <!-- HERO DASHBOARD -->
+      <section class="page-hero">
+        <div class="container page-hero-inner">
+          <p class="page-hero-eyebrow">Analytics Cockpit</p>
+          <div class="page-typed-box">
+            <h1 id="typed-dashboard" class="page-typed-slogan" data-typed-phrase="Suivez la croissance et l'impact en temps réel."></h1>
+          </div>
+          <p class="page-hero-sub">Données en direct concernant l'activité globale, les étudiants et les entreprises partenaires.</p>
+        </div>
+      </section>
+
+      <!-- STATS LIVE -->
+      <section class="analytics-kpis" style="padding-bottom: 24px;">
+        <div class="container">
+          <div class="analytics-kpi-grid">
+            <article class="analytics-kpi-card glass-card">
+              <span class="kpi-label">Étudiants inscrits</span>
+              <strong class="kpi-value count-up" data-target="214" data-suffix="+">0</strong>
+              <small class="kpi-trend positive">+18 cette semaine</small>
+            </article>
+            <article class="analytics-kpi-card glass-card">
+              <span class="kpi-label">Projets publiés</span>
+              <strong class="kpi-value count-up" data-target="126" data-suffix="+">0</strong>
+              <small class="kpi-trend positive">+9 nouveaux</small>
+            </article>
+            <article class="analytics-kpi-card glass-card">
+              <span class="kpi-label">Taux de matching</span>
+              <strong class="kpi-value count-up" data-target="87" data-suffix="%">0</strong>
+              <small class="kpi-trend positive">Très bon alignement</small>
+            </article>
+            <article class="analytics-kpi-card glass-card">
+              <span class="kpi-label">Livrables validés</span>
+              <strong class="kpi-value count-up" data-target="93" data-suffix="%">0</strong>
+              <small class="kpi-trend positive">Qualité soutenue</small>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- GRAPHIQUES -->
+      <section class="dashboard-main" style="padding-bottom: 80px;">
+        <div class="container dashboard-main-grid">
+          
+          <div class="dashboard-left">
+            <div class="dashboard-card glass-card" style="padding: clamp(20px, 4vw, 32px); border-radius: var(--radius-xl);">
+              <div class="card-head" style="margin-bottom: 24px;">
+                <div>
+                  <span class="section-chip">Activité</span>
+                  <h2>Croissance des Projets &amp; Étudiants Actifs</h2>
+                </div>
+                <div class="dashboard-live">Mise à jour live</div>
+              </div>
+              
+              <!-- SVG Line Chart -->
+              <div class="svg-chart-container" style="position: relative; height: 280px; width: 100%;">
+                <svg viewBox="0 0 500 240" class="premium-chart-svg" style="width: 100%; height: 100%; overflow: visible;">
+                  <defs>
+                    <linearGradient id="chartGlow" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stop-color="var(--primary)" stop-opacity="0.25"/>
+                      <stop offset="100%" stop-color="var(--primary)" stop-opacity="0.00"/>
+                    </linearGradient>
+                    <linearGradient id="blueGlow" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stop-color="#4dabf7" stop-opacity="0.20"/>
+                      <stop offset="100%" stop-color="#4dabf7" stop-opacity="0.00"/>
+                    </linearGradient>
+                  </defs>
+                  
+                  <!-- Y-Axis Grid Lines -->
+                  <line x1="40" y1="30" x2="480" y2="30" stroke="var(--border)" stroke-dasharray="4 4" />
+                  <line x1="40" y1="80" x2="480" y2="80" stroke="var(--border)" stroke-dasharray="4 4" />
+                  <line x1="40" y1="130" x2="480" y2="130" stroke="var(--border)" stroke-dasharray="4 4" />
+                  <line x1="40" y1="180" x2="480" y2="180" stroke="var(--border)" stroke-dasharray="4 4" />
+                  
+                  <!-- Fill Area (Gradient) -->
+                  <path d="M 40 180 Q 140 140 200 120 T 360 80 T 480 40 L 480 180 Z" fill="url(#chartGlow)" />
+                  <path d="M 40 180 Q 140 160 200 150 T 360 110 T 480 80 L 480 180 Z" fill="url(#blueGlow)" />
+                  
+                  <!-- Primary Line (Projects) -->
+                  <path d="M 40 180 Q 140 140 200 120 T 360 80 T 480 40" fill="none" stroke="var(--primary)" stroke-width="3" stroke-linecap="round" />
+                  
+                  <!-- Secondary Line (Students) -->
+                  <path d="M 40 180 Q 140 160 200 150 T 360 110 T 480 80" fill="none" stroke="#4dabf7" stroke-width="2.5" stroke-dasharray="5 5" stroke-linecap="round" />
+                  
+                  <!-- Data Dots (Projects) -->
+                  <circle cx="40" cy="180" r="4.5" fill="#030305" stroke="var(--primary)" stroke-width="2.5" />
+                  <circle cx="150" cy="138" r="4.5" fill="#030305" stroke="var(--primary)" stroke-width="2.5" />
+                  <circle cx="260" cy="110" r="4.5" fill="#030305" stroke="var(--primary)" stroke-width="2.5" />
+                  <circle cx="370" cy="78" r="4.5" fill="#030305" stroke="var(--primary)" stroke-width="2.5" />
+                  <circle cx="480" cy="40" r="4.5" fill="#030305" stroke="var(--primary)" stroke-width="2.5" />
+
+                  <!-- Labels -->
+                  <text x="40" y="205" fill="var(--text-muted)" font-size="10" font-weight="600" text-anchor="middle" font-family="var(--font-body)">Jan</text>
+                  <text x="150" y="205" fill="var(--text-muted)" font-size="10" font-weight="600" text-anchor="middle" font-family="var(--font-body)">Fév</text>
+                  <text x="260" y="205" fill="var(--text-muted)" font-size="10" font-weight="600" text-anchor="middle" font-family="var(--font-body)">Mar</text>
+                  <text x="370" y="205" fill="var(--text-muted)" font-size="10" font-weight="600" text-anchor="middle" font-family="var(--font-body)">Avr</text>
+                  <text x="480" y="205" fill="var(--text-muted)" font-size="10" font-weight="600" text-anchor="middle" font-family="var(--font-body)">Mai</text>
+
+                  <!-- Y labels -->
+                  <text x="30" y="183" fill="var(--text-muted)" font-size="9" font-weight="600" text-anchor="end" font-family="var(--font-body)">0</text>
+                  <text x="30" y="133" fill="var(--text-muted)" font-size="9" font-weight="600" text-anchor="end" font-family="var(--font-body)">40</text>
+                  <text x="30" y="83" fill="var(--text-muted)" font-size="9" font-weight="600" text-anchor="end" font-family="var(--font-body)">80</text>
+                  <text x="30" y="33" fill="var(--text-muted)" font-size="9" font-weight="600" text-anchor="end" font-family="var(--font-body)">120</text>
+                </svg>
+              </div>
+              <div class="chart-custom-legend" style="display: flex; gap: 20px; justify-content: center; margin-top: 16px;">
+                <span style="display: inline-flex; align-items: center; gap: 8px; font-size: 0.85rem; color: var(--text-soft); font-weight: 600;">
+                  <span style="width: 12px; height: 3px; background: var(--primary); display: inline-block; border-radius: 2px;"></span>
+                  Projets publiés
+                </span>
+                <span style="display: inline-flex; align-items: center; gap: 8px; font-size: 0.85rem; color: var(--text-soft); font-weight: 600;">
+                  <span style="width: 12px; height: 3px; background: #4dabf7; display: inline-block; border-radius: 2px; border-top: 1px dashed #fff;"></span>
+                  Étudiants actifs
+                </span>
+              </div>
+            </div>
+
+            <div class="dashboard-card glass-card" style="padding: clamp(20px, 4vw, 32px); border-radius: var(--radius-xl);">
+              <div class="card-head" style="margin-bottom: 24px;">
+                <div>
+                  <span class="section-chip">Domaines</span>
+                  <h2>Répartition Thématique des Projets</h2>
+                </div>
+              </div>
+              
+              <div class="donut-chart-layout" style="display: flex; flex-wrap: wrap; gap: 32px; align-items: center; justify-content: center;">
+                <!-- SVG Donut -->
+                <div style="flex-shrink: 0; display: flex; justify-content: center; width: 160px; height: 160px;">
+                  <svg viewBox="0 0 200 200" class="premium-donut-svg" style="width: 100%; height: 100%;">
+                    <circle cx="100" cy="100" r="70" fill="none" stroke="var(--border)" stroke-width="18" />
+                    <!-- Web (40% - 175.9 length) -->
+                    <circle cx="100" cy="100" r="70" fill="none" stroke="var(--primary)" stroke-width="18" 
+                            stroke-dasharray="175.9 439.8" stroke-dashoffset="0" transform="rotate(-90 100 100)" stroke-linecap="round" />
+                    <!-- Data/IA (30% - 131.9 length) -->
+                    <circle cx="100" cy="100" r="70" fill="none" stroke="#ff922b" stroke-width="18" 
+                            stroke-dasharray="131.9 439.8" stroke-dashoffset="-175.9" transform="rotate(-90 100 100)" stroke-linecap="round" />
+                    <!-- Design UI/UX (15% - 66 length) -->
+                    <circle cx="100" cy="100" r="70" fill="none" stroke="#4dabf7" stroke-width="18" 
+                            stroke-dasharray="66.0 439.8" stroke-dashoffset="-307.8" transform="rotate(-90 100 100)" stroke-linecap="round" />
+                    <!-- Cybersécurité (10% - 44 length) -->
+                    <circle cx="100" cy="100" r="70" fill="none" stroke="#ff4b6b" stroke-width="18" 
+                            stroke-dasharray="44.0 439.8" stroke-dashoffset="-373.8" transform="rotate(-90 100 100)" stroke-linecap="round" />
+                    <!-- Automatisation (5% - 22 length) -->
+                    <circle cx="100" cy="100" r="70" fill="none" stroke="#9c36b5" stroke-width="18" 
+                            stroke-dasharray="22.0 439.8" stroke-dashoffset="-417.8" transform="rotate(-90 100 100)" stroke-linecap="round" />
+                    
+                    <text x="100" y="96" text-anchor="middle" dominant-baseline="middle" fill="var(--text)" font-size="20" font-weight="800" font-family="var(--font-body)">126</text>
+                    <text x="100" y="116" text-anchor="middle" dominant-baseline="middle" fill="var(--text-muted)" font-size="9" font-weight="700" letter-spacing="1" font-family="var(--font-body)">PROJETS</text>
+                  </svg>
+                </div>
+                <!-- Legend -->
+                <div class="donut-legend" style="flex: 1; min-width: 200px;">
+                  <div class="legend-row">
+                    <span class="legend-dot green"></span>
+                    <span class="legend-label">Développement Web</span>
+                    <span class="legend-pct">40%</span>
+                  </div>
+                  <div class="legend-row">
+                    <span class="legend-dot orange"></span>
+                    <span class="legend-label">Data / IA</span>
+                    <span class="legend-pct">30%</span>
+                  </div>
+                  <div class="legend-row">
+                    <span class="legend-dot blue"></span>
+                    <span class="legend-label">Design UI/UX</span>
+                    <span class="legend-pct">15%</span>
+                  </div>
+                  <div class="legend-row">
+                    <span class="legend-dot red"></span>
+                    <span class="legend-label">Cybersécurité</span>
+                    <span class="legend-pct">10%</span>
+                  </div>
+                  <div class="legend-row">
+                    <span class="legend-dot purple" style="background: #9c36b5;"></span>
+                    <span class="legend-label">Automatisation</span>
+                    <span class="legend-pct">5%</span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+          <aside class="dashboard-right">
+            
+            <div class="dashboard-card glass-card" style="padding: clamp(20px, 4vw, 32px); border-radius: var(--radius-xl);">
+              <div class="card-head" style="margin-bottom: 24px;">
+                <div>
+                  <span class="section-chip">Matching</span>
+                  <h2>Indicateurs de Performance</h2>
+                </div>
+              </div>
+              
+              <div class="progress-block">
+                <div class="progress-meta"><span>Vitesse de contractualisation</span><span>92%</span></div>
+                <div class="progress-bar"><span style="width: 92%"></span></div>
+              </div>
+              <div class="progress-block">
+                <div class="progress-meta"><span>Rétention des entreprises</span><span>84%</span></div>
+                <div class="progress-bar"><span style="width: 84%"></span></div>
+              </div>
+              <div class="progress-block">
+                <div class="progress-meta"><span>Satisfaction étudiants</span><span>95%</span></div>
+                <div class="progress-bar"><span style="width: 95%"></span></div>
+              </div>
+            </div>
+
+            <div class="dashboard-card glass-card" style="padding: clamp(20px, 4vw, 32px); border-radius: var(--radius-xl);">
+              <div class="card-head" style="margin-bottom: 24px;">
+                <div>
+                  <span class="section-chip">Volume financier</span>
+                  <h2>Financements Distribués</h2>
+                </div>
+              </div>
+              
+              <div class="finance-status" style="text-align: center; padding: 12px 0;">
+                <div style="font-size: 2.2rem; font-weight: 800; color: var(--primary);">450,000 MAD</div>
+                <div style="font-size: 0.85rem; color: var(--text-muted); font-weight: 600; margin-top: 4px;">Volume de transactions du mois courant</div>
+              </div>
+              
+              <div style="border-top: 1px solid var(--border); padding-top: 16px; margin-top: 16px; display: flex; justify-content: space-between; font-size: 0.88rem;">
+                <span style="color: var(--text-muted); font-weight: 500;">Commission moyenne</span>
+                <span style="color: var(--text); font-weight: 700;">10%</span>
+              </div>
+              <div style="display: flex; justify-content: space-between; font-size: 0.88rem; margin-top: 8px;">
+                <span style="color: var(--text-muted); font-weight: 500;">Délai moyen de versement</span>
+                <span style="color: var(--text); font-weight: 700;">48h après validation</span>
+              </div>
+            </div>
+
+          </aside>
+
+        </div>
+      </section>
+    </div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="./index.html" class="brand footer-brand-link" aria-label="Accueil DevEarn">
+          <span class="brand-mark" aria-hidden="true">
+            <span class="brand-dev">Dev</span><span class="brand-amp">&amp;</span><span class="brand-earn">Earn</span>
+          </span>
+        </a>
+        <p>Plateforme marocaine de talents IT.</p>
+      </div>
+      <div class="footer-links-group">
+        <span class="footer-title">Navigation</span>
+        <a href="#projects">Projets</a>
+        <a href="#students">Étudiants</a>
+        <a href="#clients">Entreprises</a>
+        <a href="#dashboard">Dashboard</a>
+      </div>
+      <div class="footer-links-group">
+        <span class="footer-title">Accès</span>
+        <button type="button" class="text-link-sm" style="text-align: left;" data-open-modal="login-modal">Connexion</button>
+        <button type="button" class="text-link-sm" style="text-align: left;" data-open-modal="register-modal">Inscription</button>
+        <button type="button" class="text-link-sm" style="text-align: left;" data-open-modal="post-project-modal">Publier un projet</button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MODAL : CONNEXION -->
+  <div class="modal-overlay" id="login-modal" aria-hidden="true">
+    <div class="modal-card glass-card">
+      <button type="button" class="modal-close" aria-label="Fermer">&times;</button>
+      <h2>Connexion</h2>
+      <p>Accédez à votre espace DevEarn.</p>
+      <form class="modal-form" action="#" method="post">
+        <div class="floating-group">
+          <input type="email" id="modal-login-email" name="email" placeholder=" " required />
+          <label for="modal-login-email">Email</label>
+        </div>
+        <div class="floating-group">
+          <input type="password" id="modal-login-password" name="password" placeholder=" " required />
+          <label for="modal-login-password">Mot de passe</label>
+        </div>
+        <div class="modal-row">
+          <label class="check-inline">
+            <input type="checkbox" name="remember_me" />
+            <span>Se souvenir de moi</span>
+          </label>
+          <a href="#" class="text-link-sm">Mot de passe oublié ?</a>
+        </div>
+        <button type="submit" class="btn-hero btn-hero-full">Se connecter <span class="btn-hero-arrow">→</span></button>
+      </form>
+      <div class="modal-footer-note">
+        <span>Pas de compte ?</span>
+        <button type="button" class="text-link-sm" data-switch-modal="register-modal">Créer un compte</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL : INSCRIPTION -->
+  <div class="modal-overlay" id="register-modal" aria-hidden="true">
+    <div class="modal-card glass-card">
+      <button type="button" class="modal-close" aria-label="Fermer">&times;</button>
+      <h2>Inscription</h2>
+      <p>Rejoignez la plateforme DevEarn.</p>
+      <form class="modal-form" action="#" method="post">
+        <div class="modal-form-row">
+          <div class="floating-group">
+            <input type="text" id="modal-reg-firstname" name="firstname" placeholder=" " required />
+            <label for="modal-reg-firstname">Prénom</label>
+          </div>
+          <div class="floating-group">
+            <input type="text" id="modal-reg-lastname" name="lastname" placeholder=" " required />
+            <label for="modal-reg-lastname">Nom</label>
+          </div>
+        </div>
+        <div class="floating-group">
+          <input type="email" id="modal-reg-email" name="email" placeholder=" " required />
+          <label for="modal-reg-email">Email</label>
+        </div>
+        <div class="floating-group">
+          <select id="modal-reg-role" name="role" required>
+            <option value="" disabled selected></option>
+            <option>Étudiant</option>
+            <option>Client / Entreprise</option>
+            <option>Mentor / Lauréat</option>
+          </select>
+          <label for="modal-reg-role">Type de profil</label>
+        </div>
+        <div class="floating-group">
+          <input type="password" id="modal-reg-password" name="password" placeholder=" " required />
+          <label for="modal-reg-password">Mot de passe</label>
+        </div>
+        <div class="floating-group">
+          <input type="password" id="modal-reg-password-confirm" name="password_confirm" placeholder=" " required />
+          <label for="modal-reg-password-confirm">Confirmer</label>
+        </div>
+        <label class="check-inline">
+          <input type="checkbox" name="terms" required />
+          <span>J'accepte les conditions d'utilisation.</span>
+        </label>
+        <button type="submit" class="btn-hero btn-hero-full">Créer mon compte <span class="btn-hero-arrow">→</span></button>
+      </form>
+      <div class="modal-footer-note">
+        <span>Déjà inscrit ?</span>
+        <button type="button" class="text-link-sm" data-switch-modal="login-modal">Se connecter</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL : PROPOSER UN PROJET -->
+  <div class="modal-overlay" id="post-project-modal" aria-hidden="true">
+    <div class="modal-card glass-card">
+      <button type="button" class="modal-close" aria-label="Fermer">&times;</button>
+      <h2>Proposer un projet</h2>
+      <p>Décrivez votre besoin pour trouver les meilleurs talents IT du Maroc.</p>
+      <form class="modal-form" action="#" method="post">
+        <div class="floating-group">
+          <input type="text" id="modal-project-title" name="title" placeholder=" " required />
+          <label for="modal-project-title">Titre du projet</label>
+        </div>
+        <div class="modal-form-row">
+          <div class="floating-group">
+            <select id="modal-project-category" name="category" required>
+              <option value="" disabled selected></option>
+              <option>Développement Web</option>
+              <option>Data / IA</option>
+              <option>Design UI/UX</option>
+              <option>Cybersécurité</option>
+              <option>Automatisation</option>
+            </select>
+            <label for="modal-project-category">Catégorie</label>
+          </div>
+          <div class="floating-group">
+            <input type="text" id="modal-project-budget" name="budget" placeholder=" " required />
+            <label for="modal-project-budget">Budget (MAD)</label>
+          </div>
+        </div>
+        <div class="floating-group">
+          <textarea id="modal-project-desc" name="description" rows="4" placeholder=" " required></textarea>
+          <label for="modal-project-desc">Description de la mission</label>
+        </div>
+        <div class="floating-group">
+          <input type="text" id="modal-project-skills" name="skills" placeholder=" " required />
+          <label for="modal-project-skills">Compétences requises (React, Node, etc.)</label>
+        </div>
+        <button type="submit" class="btn-hero btn-hero-full">Publier le projet <span class="btn-hero-arrow">→</span></button>
+      </form>
+    </div>
+  </div>
+
+  <script src="./js/main.js"></script>
+  <script src="./js/home.js"></script>
+</body>
+
+</html>

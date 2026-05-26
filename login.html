@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+<head>
+  <script>window.location.replace('./index.html#login');</script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DevEarn — Connexion</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./css/global.css" />
+  <link rel="stylesheet" href="./css/auth.css" />
+</head>
+<body class="auth-page">
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="./index.html" class="brand" aria-label="Accueil DevEarn">
+        <span class="brand-mark" aria-hidden="true">
+          <span class="brand-dev">Dev</span><span class="brand-amp">&amp;</span><span class="brand-earn">Earn</span>
+        </span>
+      </a>
+      <nav class="main-nav" aria-label="Navigation principale">
+        <button class="nav-toggle" type="button" aria-label="Ouvrir le menu">
+          <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-list">
+          <li><a href="./index.html" class="is-current">Accueil</a></li>
+          <li><a href="./projects.html">Projets</a></li>
+          <li><a href="./student-space.html">Étudiants</a></li>
+          <li><a href="./client-space.html">Entreprises</a></li>
+          <li><a href="./dashboard.html">Dashboard</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <button class="theme-toggle" type="button" aria-label="Basculer le thème">
+          <span class="theme-toggle-icon">◐</span>
+        </button>
+        <button type="button" class="btn btn-ghost" data-open-modal="login-modal">Connexion</button>
+        <button type="button" class="btn btn-primary" data-open-modal="register-modal">Inscription</button>
+      </div>
+    </div>
+  </header>
+  <main id="main-content">
+    <section class="auth-section">
+      <div class="container auth-container">
+        <div class="auth-card glass-card">
+          <h2>Connexion</h2>
+          <p>Accédez à votre espace personnel DevEarn.</p>
+          <form class="auth-form" action="#" method="post">
+            <div class="floating-group">
+              <input type="email" id="login-email" name="email" placeholder=" " required />
+              <label for="login-email">Email</label>
+            </div>
+            <div class="floating-group">
+              <input type="password" id="login-password" name="password" placeholder=" " required />
+              <label for="login-password">Mot de passe</label>
+            </div>
+            <div class="auth-row">
+              <label class="check-inline">
+                <input type="checkbox" name="remember_me" />
+                <span>Se souvenir de moi</span>
+              </label>
+              <a href="#" class="text-link-sm">Oublié ?</a>
+            </div>
+            <button type="submit" class="btn-hero btn-hero-full">Se connecter <span class="btn-hero-arrow">→</span></button>
+          </form>
+          <div class="auth-footer-note">
+            <span>Pas de compte ?</span>
+            <a href="./register.html" class="text-link-sm">Créer un compte</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="./index.html" class="brand footer-brand-link" aria-label="Accueil DevEarn">
+          <span class="brand-mark" aria-hidden="true">
+            <span class="brand-dev">Dev</span><span class="brand-amp">&amp;</span><span class="brand-earn">Earn</span>
+          </span>
+        </a>
+        <p>Plateforme marocaine de talents IT.</p>
+      </div>
+      <div class="footer-links-group">
+        <span class="footer-title">Navigation</span>
+        <a href="./projects.html">Projets</a>
+        <a href="./student-space.html">Étudiants</a>
+        <a href="./client-space.html">Entreprises</a>
+        <a href="./dashboard.html">Dashboard</a>
+      </div>
+      <div class="footer-links-group">
+        <span class="footer-title">Accès</span>
+        <button type="button" class="text-link-sm" data-open-modal="login-modal">Connexion</button>
+        <button type="button" class="text-link-sm" data-open-modal="register-modal">Inscription</button>
+        <a href="./post-project.html">Publier un projet</a>
+      </div>
+    </div>
+  </footer>
+  <script src="./js/main.js"></script>
+</body>
+</html>

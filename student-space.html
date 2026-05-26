@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+<head>
+  <script>window.location.replace('./index.html#students');</script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DevEarn — Espace Étudiant</title>
+  <meta name="description" content="Tableau de bord étudiant DevEarn : candidatures, projets recommandés, progression, badges et portfolio." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./css/global.css" />
+  <link rel="stylesheet" href="./css/student-space.css" />
+</head>
+<body class="student-space-page">
+  <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="./index.html" class="brand" aria-label="Accueil DevEarn">
+        <span class="brand-mark" aria-hidden="true">
+          <span class="brand-dev">Dev</span><span class="brand-amp">&amp;</span><span class="brand-earn">Earn</span>
+        </span>
+      </a>
+      <nav class="main-nav" aria-label="Navigation principale">
+        <button class="nav-toggle" type="button" aria-label="Ouvrir le menu">
+          <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-list">
+          <li><a href="./index.html">Accueil</a></li>
+          <li><a href="./projects.html">Projets</a></li>
+          <li><a href="./student-space.html" class="is-current">Étudiants</a></li>
+          <li><a href="./client-space.html">Entreprises</a></li>
+          <li><a href="./dashboard.html">Dashboard</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <button class="theme-toggle" type="button" aria-label="Basculer le thème">
+          <span class="theme-toggle-icon">◐</span>
+        </button>
+        <a href="./login.html" class="btn btn-ghost">Connexion</a>
+        <a href="./register.html" class="btn btn-primary">Inscription</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+      <div class="container page-hero-inner">
+        <p class="page-hero-eyebrow">Espace Personnel</p>
+        <div class="page-typed-box">
+          <h1 id="typed-students" class="page-typed-slogan"></h1>
+        </div>
+        <p class="page-hero-sub">Gérez vos candidatures, suivez votre progression et accédez aux meilleures missions.</p>
+      </div>
+    </section>
+
+    <!-- KPI RAPIDES -->
+    <section class="student-kpi section-spacing">
+      <div class="container">
+        <div class="kpi-grid">
+          <article class="kpi-card glass-card">
+            <span class="kpi-label">Candidatures</span>
+            <strong class="kpi-value">27</strong>
+            <p>Envoyées sur les derniers cycles</p>
+          </article>
+          <article class="kpi-card glass-card">
+            <span class="kpi-label">Shortlists</span>
+            <strong class="kpi-value">08</strong>
+            <p>Projets où le profil a été retenu</p>
+          </article>
+          <article class="kpi-card glass-card">
+            <span class="kpi-label">Matching</span>
+            <strong class="kpi-value">87%</strong>
+            <p>Alignement compétences / projets</p>
+          </article>
+          <article class="kpi-card glass-card">
+            <span class="kpi-label">Badges</span>
+            <strong class="kpi-value">12</strong>
+            <p>Débloqués — fiabilité &amp; impact</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- TABLEAU DE BORD PRINCIPAL -->
+    <section class="student-main-board section-spacing">
+      <div class="container board-grid">
+        <div class="board-column-main">
+
+          <!-- Projets recommandés -->
+          <div class="panel-card glass-card">
+            <div class="panel-header">
+              <div>
+                <span class="section-chip">Projets recommandés</span>
+                <h2>Opportunités alignées avec votre profil</h2>
+              </div>
+              <a href="./projects.html" class="text-link">Voir tout</a>
+            </div>
+            <div class="recommended-list">
+              <article class="recommended-card">
+                <div class="recommended-top">
+                  <span class="recommended-tag">95% match</span>
+                  <span class="recommended-level">Avancé</span>
+                </div>
+                <h3>Fine-tuning LLM pour domaine spécialisé</h3>
+                <p>Aligné avec vos compétences en NLP, PEFT et optimisation de modèles.</p>
+                <div class="recommended-footer">
+                  <span>NLP / LLM</span><span>Budget premium</span><span>2 semaines</span>
+                </div>
+              </article>
+              <article class="recommended-card">
+                <div class="recommended-top">
+                  <span class="recommended-tag">90% match</span>
+                  <span class="recommended-level">Intermédiaire</span>
+                </div>
+                <h3>Dashboard analytique pour KPI business</h3>
+                <p>Adapté à vos compétences en data visualisation et restitution claire.</p>
+                <div class="recommended-footer">
+                  <span>Dashboard</span><span>Client PME</span><span>10 jours</span>
+                </div>
+              </article>
+              <article class="recommended-card">
+                <div class="recommended-top">
+                  <span class="recommended-tag">88% match</span>
+                  <span class="recommended-level">Avancé</span>
+                </div>
+                <h3>Pipeline de classification pour données métiers</h3>
+                <p>ML appliqué avec préparation, évaluation et documentation complète.</p>
+                <div class="recommended-footer">
+                  <span>Data / IA</span><span>Modèle + rapport</span><span>12 jours</span>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <!-- Candidatures -->
+          <div class="panel-card glass-card">
+            <div class="panel-header">
+              <div>
+                <span class="section-chip">Mes candidatures</span>
+                <h2>Suivi de vos propositions</h2>
+              </div>
+              <a href="./projects.html" class="text-link">Trouver d'autres projets</a>
+            </div>
+            <div class="application-table">
+              <div class="table-row table-head">
+                <span>Projet</span><span>Catégorie</span><span>Statut</span><span>Date</span>
+              </div>
+              <div class="table-row">
+                <span>Audit data pipeline</span><span>Data</span>
+                <span class="status-badge pending">En revue</span><span>24 Mai</span>
+              </div>
+              <div class="table-row">
+                <span>Dashboard RH</span><span>Analytics</span>
+                <span class="status-badge accepted">Shortlist</span><span>23 Mai</span>
+              </div>
+              <div class="table-row">
+                <span>Prototype LLM santé</span><span>NLP</span>
+                <span class="status-badge active">Entretien</span><span>22 Mai</span>
+              </div>
+              <div class="table-row">
+                <span>Refonte site startup</span><span>Web</span>
+                <span class="status-badge rejected">Clôturé</span><span>20 Mai</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <aside class="board-column-side">
+          <!-- Progression -->
+          <div class="panel-card glass-card">
+            <div class="panel-header">
+              <div>
+                <span class="section-chip">Progression</span>
+                <h2>Niveau du profil</h2>
+              </div>
+            </div>
+            <div class="level-box">
+              <span class="level-title">Level 07 · Expert Track</span>
+              <strong>2 420 XP</strong>
+              <p>Encore 180 XP pour le niveau suivant.</p>
+            </div>
+            <div class="progress-block">
+              <div class="progress-meta"><span>Réputation</span><span>91%</span></div>
+              <div class="progress-bar"><span style="width: 91%"></span></div>
+            </div>
+            <div class="progress-block">
+              <div class="progress-meta"><span>Complétion profil</span><span>96%</span></div>
+              <div class="progress-bar"><span style="width: 96%"></span></div>
+            </div>
+            <div class="progress-block">
+              <div class="progress-meta"><span>Match moyen</span><span>87%</span></div>
+              <div class="progress-bar"><span style="width: 87%"></span></div>
+            </div>
+          </div>
+
+          <!-- Badges -->
+          <div class="panel-card glass-card">
+            <div class="panel-header">
+              <div>
+                <span class="section-chip">Badges</span>
+                <h2>Récompenses actives</h2>
+              </div>
+            </div>
+            <div class="badge-list">
+              <span class="badge-pill">Top Rated</span>
+              <span class="badge-pill">Reliable</span>
+              <span class="badge-pill">Fast Responder</span>
+              <span class="badge-pill">NLP Expert</span>
+              <span class="badge-pill">Data Driven</span>
+              <span class="badge-pill">Strong Delivery</span>
+            </div>
+          </div>
+
+          <!-- Portfolio -->
+          <div class="panel-card glass-card">
+            <div class="panel-header">
+              <div>
+                <span class="section-chip">Portfolio</span>
+                <h2>Derniers livrables</h2>
+              </div>
+            </div>
+            <div class="mini-portfolio-list">
+              <article class="mini-portfolio-card">
+                <strong>Dashboard performance</strong>
+                <p>Visualisation KPI pour une PME.</p>
+              </article>
+              <article class="mini-portfolio-card">
+                <strong>LLM domain adaptation</strong>
+                <p>Adaptation d'un modèle pour besoin ciblé.</p>
+              </article>
+              <article class="mini-portfolio-card">
+                <strong>Classification pipeline</strong>
+                <p>Pipeline ML avec métriques et synthèse.</p>
+              </article>
+            </div>
+            <a href="./student-profile.html" class="btn btn-secondary portfolio-btn">Voir mon profil complet</a>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section section-spacing">
+      <div class="container">
+        <div class="cta-panel glass-card">
+          <div class="cta-copy">
+            <h2>Construisez votre réputation avec des livrables concrets</h2>
+            <p>DevEarn transforme votre espace en hub de progression : projets, badges et opportunités réelles.</p>
+          </div>
+          <div class="cta-actions">
+            <a href="./projects.html" class="btn btn-primary btn-lg">Candidater à un projet</a>
+            <a href="./student-profile.html" class="btn btn-secondary btn-lg">Optimiser mon profil</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="./index.html" class="brand footer-brand-link" aria-label="Accueil DevEarn">
+          <span class="brand-mark" aria-hidden="true">
+            <span class="brand-dev">Dev</span><span class="brand-amp">&amp;</span><span class="brand-earn">Earn</span>
+          </span>
+        </a>
+        <p>Pilotez vos candidatures, réputation et progression sur DevEarn.</p>
+      </div>
+      <div class="footer-links-group">
+        <span class="footer-title">Explorer</span>
+        <a href="./projects.html">Projets</a>
+        <a href="./student-profile.html">Profil étudiant</a>
+        <a href="./dashboard.html">Dashboard</a>
+        <a href="./index.html">Accueil</a>
+      </div>
+      <div class="footer-links-group">
+        <span class="footer-title">Actions</span>
+        <a href="./post-project.html">Publier un projet</a>
+        <a href="./client-space.html">Espace Entreprise</a>
+        <a href="./register.html">Inscription</a>
+        <a href="./login.html">Connexion</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./js/main.js"></script>
+</body>
+</html>

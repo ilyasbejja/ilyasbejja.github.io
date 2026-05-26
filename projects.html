@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+<head>
+  <script>window.location.replace('./index.html#projects');</script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DevEarn — Projets</title>
+  <meta name="description" content="Explorez les projets tendances, missions bien notées et opportunités à fort impact sur DevEarn." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./css/global.css" />
+  <link rel="stylesheet" href="./css/projects.css" />
+</head>
+<body class="projects-page">
+  <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="./index.html" class="brand" aria-label="Accueil DevEarn">
+        <span class="brand-mark" aria-hidden="true">
+          <span class="brand-dev">Dev</span><span class="brand-amp">&amp;</span><span class="brand-earn">Earn</span>
+        </span>
+      </a>
+      <nav class="main-nav" aria-label="Navigation principale">
+        <button class="nav-toggle" type="button" aria-label="Ouvrir le menu">
+          <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-list">
+          <li><a href="./index.html">Accueil</a></li>
+          <li><a href="./projects.html" class="is-current">Projets</a></li>
+          <li><a href="./student-space.html">Étudiants</a></li>
+          <li><a href="./client-space.html">Entreprises</a></li>
+          <li><a href="./dashboard.html">Dashboard</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <button class="theme-toggle" type="button" aria-label="Basculer le thème">
+          <span class="theme-toggle-icon">◐</span>
+        </button>
+        <a href="./login.html" class="btn btn-ghost">Connexion</a>
+        <a href="./register.html" class="btn btn-primary">Inscription</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+      <div class="container page-hero-inner">
+        <p class="page-hero-eyebrow">Missions disponibles</p>
+        <div class="page-typed-box">
+          <h1 id="typed-projects" class="page-typed-slogan"></h1>
+        </div>
+        <p class="page-hero-sub">Filtrez par catégorie ou niveau pour trouver la mission qui vous correspond.</p>
+      </div>
+    </section>
+
+    <!-- FILTRES -->
+    <section class="filters-section">
+      <div class="container">
+        <div class="filters-bar">
+          <div class="filters-group">
+            <button class="filter-chip is-active" data-filter="all">Tous</button>
+            <button class="filter-chip" data-filter="web">Web</button>
+            <button class="filter-chip" data-filter="data">Data / IA</button>
+            <button class="filter-chip" data-filter="design">Design</button>
+            <button class="filter-chip" data-filter="cyber">Cybersécurité</button>
+            <button class="filter-chip" data-filter="automation">Automatisation</button>
+          </div>
+          <div class="filters-group">
+            <button class="filter-chip level-chip is-active" data-level="all">Tous niveaux</button>
+            <button class="filter-chip level-chip" data-level="junior">Junior</button>
+            <button class="filter-chip level-chip" data-level="intermediate">Intermédiaire</button>
+            <button class="filter-chip level-chip" data-level="advanced">Avancé</button>
+          </div>
+        </div>
+        <span class="results-counter" id="results-counter">6 projets affichés</span>
+      </div>
+    </section>
+
+    <!-- GRILLE PROJETS -->
+    <section class="trending-projects section-spacing">
+      <div class="container">
+        <div class="projects-grid" id="projects-grid">
+
+          <article class="project-card glass-card" data-category="web" data-level="intermediate">
+            <div class="project-top">
+              <span class="project-tag hot">Hot</span>
+              <span class="project-rating">4.8 ★</span>
+            </div>
+            <h3>Refonte plateforme vitrine pour PME</h3>
+            <p>Refonte complète d'un site web corporate avec dashboard simple et optimisation UX.</p>
+            <div class="project-meta">
+              <span>Web</span><span>·</span><span>Intermédiaire</span>
+            </div>
+            <div class="project-stats">
+              <div><strong>23</strong><span>candidatures</span></div>
+              <div><strong>5</strong><span>shortlistés</span></div>
+              <div><strong>92%</strong><span>matching</span></div>
+            </div>
+            <a href="./post-project.html" class="text-link">Voir le projet</a>
+          </article>
+
+          <article class="project-card glass-card" data-category="data" data-level="advanced">
+            <div class="project-top">
+              <span class="project-tag premium">Top Rated</span>
+              <span class="project-rating">4.9 ★</span>
+            </div>
+            <h3>Prédiction de churn client avec dashboard analytique</h3>
+            <p>Pipeline data, modélisation prédictive et restitution visuelle des résultats.</p>
+            <div class="project-meta">
+              <span>Data / IA</span><span>·</span><span>Avancé</span>
+            </div>
+            <div class="project-stats">
+              <div><strong>17</strong><span>candidatures</span></div>
+              <div><strong>3</strong><span>retenus</span></div>
+              <div><strong>95%</strong><span>satisfaction</span></div>
+            </div>
+            <a href="./post-project.html" class="text-link">Voir le projet</a>
+          </article>
+
+          <article class="project-card glass-card" data-category="design" data-level="junior">
+            <div class="project-top">
+              <span class="project-tag amber">Impact</span>
+              <span class="project-rating">4.7 ★</span>
+            </div>
+            <h3>Prototype mobile UX pour application santé</h3>
+            <p>Conception d'écrans mobiles, parcours utilisateur et système visuel cohérent.</p>
+            <div class="project-meta">
+              <span>UI/UX Design</span><span>·</span><span>Junior</span>
+            </div>
+            <div class="project-stats">
+              <div><strong>29</strong><span>vues</span></div>
+              <div><strong>11</strong><span>likes</span></div>
+              <div><strong>89%</strong><span>engagement</span></div>
+            </div>
+            <a href="./post-project.html" class="text-link">Voir le projet</a>
+          </article>
+
+          <article class="project-card glass-card" data-category="cyber" data-level="advanced">
+            <div class="project-top">
+              <span class="project-tag hot">Critical</span>
+              <span class="project-rating">4.9 ★</span>
+            </div>
+            <h3>Audit sécurité pour portail interne</h3>
+            <p>Analyse de vulnérabilités et rapport de recommandations actionnable.</p>
+            <div class="project-meta">
+              <span>Cybersécurité</span><span>·</span><span>Avancé</span>
+            </div>
+            <div class="project-stats">
+              <div><strong>12</strong><span>candidatures</span></div>
+              <div><strong>2</strong><span>experts ciblés</span></div>
+              <div><strong>97%</strong><span>priorité</span></div>
+            </div>
+            <a href="./post-project.html" class="text-link">Voir le projet</a>
+          </article>
+
+          <article class="project-card glass-card" data-category="automation" data-level="intermediate">
+            <div class="project-top">
+              <span class="project-tag premium">Fast Win</span>
+              <span class="project-rating">4.6 ★</span>
+            </div>
+            <h3>Automatisation de reporting Excel et emailing</h3>
+            <p>Automatiser le traitement de fichiers et l'envoi de rapports périodiques.</p>
+            <div class="project-meta">
+              <span>Automatisation</span><span>·</span><span>Intermédiaire</span>
+            </div>
+            <div class="project-stats">
+              <div><strong>18</strong><span>candidatures</span></div>
+              <div><strong>8</strong><span>compatibles</span></div>
+              <div><strong>86%</strong><span>rapidité</span></div>
+            </div>
+            <a href="./post-project.html" class="text-link">Voir le projet</a>
+          </article>
+
+          <article class="project-card glass-card" data-category="web" data-level="junior">
+            <div class="project-top">
+              <span class="project-tag amber">Starter</span>
+              <span class="project-rating">4.5 ★</span>
+            </div>
+            <h3>Mini-site événementiel pour association</h3>
+            <p>Site élégant avec formulaire, page programme et adaptation mobile.</p>
+            <div class="project-meta">
+              <span>Web</span><span>·</span><span>Junior</span>
+            </div>
+            <div class="project-stats">
+              <div><strong>31</strong><span>candidatures</span></div>
+              <div><strong>14</strong><span>intéressés</span></div>
+              <div><strong>83%</strong><span>accessibilité</span></div>
+            </div>
+            <a href="./post-project.html" class="text-link">Voir le projet</a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section section-spacing">
+      <div class="container">
+        <div class="cta-panel glass-card">
+          <div class="cta-copy">
+            <h2>Publiez une mission ou candidatez dès maintenant</h2>
+            <p>DevEarn met en avant les projets à potentiel et valorise concrètement les talents étudiants.</p>
+          </div>
+          <div class="cta-actions">
+            <a href="./post-project.html" class="btn btn-primary btn-lg">Déposer un projet</a>
+            <a href="./student-profile.html" class="btn btn-secondary btn-lg">Voir les profils</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="./index.html" class="brand footer-brand-link" aria-label="Accueil DevEarn">
+          <span class="brand-mark" aria-hidden="true">
+            <span class="brand-dev">Dev</span><span class="brand-amp">&amp;</span><span class="brand-earn">Earn</span>
+          </span>
+        </a>
+        <p>Explorez les missions, comparez les projets et accédez aux opportunités à fort impact.</p>
+      </div>
+      <div class="footer-links-group">
+        <span class="footer-title">Plateforme</span>
+        <a href="./index.html">Accueil</a>
+        <a href="./projects.html" class="is-current">Projets</a>
+        <a href="./dashboard.html">Dashboard</a>
+        <a href="./post-project.html">Publier un projet</a>
+      </div>
+      <div class="footer-links-group">
+        <span class="footer-title">Profils</span>
+        <a href="./student-space.html">Espace Étudiant</a>
+        <a href="./client-space.html">Espace Entreprise</a>
+        <a href="./student-profile.html">Profil étudiant</a>
+        <a href="./register.html">Inscription</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./js/main.js"></script>
+  <script src="./js/projects.js"></script>
+</body>
+</html>

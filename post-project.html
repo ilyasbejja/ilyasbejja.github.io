@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DevEarn — Déposer un Projet</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./css/global.css" />
+  <link rel="stylesheet" href="./css/post-project.css" />
+</head>
+<body class="post-project-page">
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="./index.html" class="brand" aria-label="Accueil DevEarn">
+        <span class="brand-mark" aria-hidden="true">
+          <span class="brand-dev">Dev</span><span class="brand-amp">&amp;</span><span class="brand-earn">Earn</span>
+        </span>
+      </a>
+      <nav class="main-nav" aria-label="Navigation principale">
+        <button class="nav-toggle" type="button" aria-label="Ouvrir le menu">
+          <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-list">
+          <li><a href="./index.html">Accueil</a></li>
+          <li><a href="./projects.html">Projets</a></li>
+          <li><a href="./student-space.html">Étudiants</a></li>
+          <li><a href="./client-space.html" class="is-current">Entreprises</a></li>
+          <li><a href="./dashboard.html">Dashboard</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <button class="theme-toggle" type="button" aria-label="Basculer le thème">
+          <span class="theme-toggle-icon">◐</span>
+        </button>
+        <button type="button" class="btn btn-ghost" data-open-modal="login-modal">Connexion</button>
+        <button type="button" class="btn btn-primary" data-open-modal="register-modal">Inscription</button>
+      </div>
+    </div>
+  </header>
+  <main id="main-content">
+    <section class="page-hero">
+      <div class="container page-hero-inner">
+        <p class="page-hero-eyebrow">Publication</p>
+        <div class="page-typed-box">
+          <h1 id="typed-post" class="page-typed-slogan"></h1>
+        </div>
+        <p class="page-hero-sub">Décrivez votre besoin pour trouver les meilleurs talents IT du Maroc.</p>
+      </div>
+    </section>
+
+    <section class="post-form-section section-spacing">
+      <div class="container">
+        <div class="form-wrapper glass-card">
+          <form class="post-project-form" action="#" method="post">
+            <div class="form-group">
+              <label for="project-title">Titre du projet</label>
+              <input type="text" id="project-title" name="title" placeholder="Ex: Refonte UX/UI application mobile" required />
+            </div>
+            
+            <div class="form-group-row">
+              <div class="form-group">
+                <label for="project-category">Catégorie</label>
+                <select id="project-category" name="category" required>
+                  <option value="" disabled selected>Choisir...</option>
+                  <option>Développement Web</option>
+                  <option>Data / IA</option>
+                  <option>Design UI/UX</option>
+                  <option>Cybersécurité</option>
+                  <option>Automatisation</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="project-budget">Budget (MAD)</label>
+                <input type="text" id="project-budget" name="budget" placeholder="Ex: 10k - 15k" required />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="project-desc">Description de la mission</label>
+              <textarea id="project-desc" name="description" rows="5" placeholder="Décrivez les objectifs, livrables attendus..." required></textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="project-skills">Compétences requises</label>
+              <input type="text" id="project-skills" name="skills" placeholder="Ex: React, Node.js, Figma..." required />
+            </div>
+
+            <button type="submit" class="btn-hero btn-hero-full">Publier le projet <span class="btn-hero-arrow">→</span></button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="./index.html" class="brand footer-brand-link" aria-label="Accueil DevEarn">
+          <span class="brand-mark" aria-hidden="true">
+            <span class="brand-dev">Dev</span><span class="brand-amp">&amp;</span><span class="brand-earn">Earn</span>
+          </span>
+        </a>
+        <p>Plateforme marocaine de talents IT.</p>
+      </div>
+      <div class="footer-links-group">
+        <span class="footer-title">Navigation</span>
+        <a href="./projects.html">Projets</a>
+        <a href="./student-space.html">Étudiants</a>
+        <a href="./client-space.html">Entreprises</a>
+        <a href="./dashboard.html">Dashboard</a>
+      </div>
+      <div class="footer-links-group">
+        <span class="footer-title">Accès</span>
+        <button type="button" class="text-link-sm" data-open-modal="login-modal">Connexion</button>
+        <button type="button" class="text-link-sm" data-open-modal="register-modal">Inscription</button>
+        <a href="./post-project.html">Publier un projet</a>
+      </div>
+    </div>
+  </footer>
+  <script src="./js/main.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const el = document.getElementById("typed-post");
+      if (el) {
+        let phrase = "Publiez votre projet en 2 minutes.";
+        let charIndex = 0;
+        function type() {
+          if (charIndex < phrase.length) {
+            el.textContent += phrase.charAt(charIndex);
+            charIndex++;
+            setTimeout(type, 50);
+          } else {
+            el.classList.add("typed-cursor-effect");
+          }
+        }
+        setTimeout(type, 300);
+      }
+    });
+  </script>
+</body>
+</html>
