@@ -110,7 +110,11 @@ document.addEventListener("DOMContentLoaded", () => {
     projects: document.getElementById("projects-section"),
     students: document.getElementById("students-section"),
     clients: document.getElementById("clients-section"),
-    dashboard: document.getElementById("dashboard-section")
+    dashboard: document.getElementById("dashboard-section"),
+    "student-hub": document.getElementById("student-hub-section"),
+    "my-applications": document.getElementById("my-applications-section"),
+    "client-hub": document.getElementById("client-hub-section"),
+    "project-applications": document.getElementById("project-applications-section")
   };
 
   let activeSectionId = "accueil";
@@ -457,9 +461,10 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
+  window.bindSPALinks = initializeSPALinks;
 
   /* ── MODALS MANAGER ─────────────────────────────────── */
-  function openModal(id) {
+  function openModal(id, triggerElement = null) {
     const modal = document.getElementById(id);
     if (!modal) return;
 
@@ -471,6 +476,14 @@ document.addEventListener("DOMContentLoaded", () => {
     modal.classList.add("is-active");
     modal.setAttribute("aria-hidden", "false");
     document.body.style.overflow = "hidden";
+
+    if (id === "register-modal") {
+        let role = null;
+        if (triggerElement && triggerElement.dataset.preselectRole) {
+            role = triggerElement.dataset.preselectRole;
+        }
+        document.dispatchEvent(new CustomEvent('devearn:preselect-role', { detail: { role } }));
+    }
 
     setTimeout(() => {
       const firstInput = modal.querySelector("input, select, textarea");
@@ -488,14 +501,14 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll("[data-open-modal]").forEach((btn) => {
       btn.addEventListener("click", (e) => {
         e.preventDefault();
-        openModal(btn.getAttribute("data-open-modal"));
+        openModal(btn.getAttribute("data-open-modal"), btn);
       });
     });
 
     document.querySelectorAll("[data-switch-modal]").forEach((btn) => {
       btn.addEventListener("click", (e) => {
         e.preventDefault();
-        openModal(btn.getAttribute("data-switch-modal"));
+        openModal(btn.getAttribute("data-switch-modal"), btn);
       });
     });
 
@@ -577,8 +590,11 @@ document.addEventListener("DOMContentLoaded", () => {
   function initializeHashRouting() {
     const hash = window.location.hash.replace("#", "");
 
-    if (hash === "login" || hash === "register") {
-      openModal(hash === "login" ? "login-modal" : "register-modal");
+    if (hash === "login" || hash === "register" || hash === "post-project-modal") {
+      if (hash === "login") openModal("login-modal");
+      else if (hash === "register") openModal("register-modal");
+      else openModal("post-project-modal");
+      
       showSection("accueil");
       startHeroSloganCycle();
       animateCountUps(sections["accueil"]);
@@ -615,4 +631,8 @@ document.addEventListener("DOMContentLoaded", () => {
   initializeScrollTriggers();
   initializeProjectFiltering();
   initializeHashRouting();
+
+  // Expose modal functions globally
+  window.openModal = openModal;
+  window.closeModal = closeModal;
 });

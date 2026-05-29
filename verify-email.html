@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DevEarn — Vérifier Email</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./css/global.css" />
+  <link rel="stylesheet" href="./css/auth.css" />
+  <style>
+    .verification-container {
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .code-display {
+      text-align: center;
+      margin: 32px 0;
+    }
+
+    .code-input {
+      font-size: 32px;
+      letter-spacing: 8px;
+      text-align: center;
+      padding: 16px;
+      border: 2px solid var(--primary);
+      border-radius: var(--radius-md);
+      font-family: 'Courier New', monospace;
+      font-weight: bold;
+      width: 100%;
+      max-width: 280px;
+      margin: 0 auto;
+      display: block;
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--text);
+    }
+
+    .code-input:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 12px rgba(31, 199, 160, 0.3);
+    }
+
+    .code-input::placeholder {
+      letter-spacing: normal;
+      color: var(--text-muted);
+    }
+
+    .verification-steps {
+      margin: 28px 0;
+      padding: 18px;
+      background: rgba(31, 199, 160, 0.08);
+      border-left: 3px solid var(--primary);
+      border-radius: var(--radius-md);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .verification-steps strong {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--primary);
+    }
+
+    .verification-steps ol {
+      margin-left: 18px;
+    }
+
+    .verification-steps li {
+      margin-bottom: 8px;
+    }
+
+    .resend-section {
+      margin-top: 24px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      text-align: center;
+    }
+
+    .resend-text {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+
+    .resend-button {
+      background: transparent;
+      border: 1px solid var(--primary);
+      color: var(--primary);
+      padding: 10px 20px;
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .resend-button:hover {
+      background: rgba(31, 199, 160, 0.1);
+    }
+
+    .resend-button:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 16px;
+      color: var(--text-soft);
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+
+    .back-link:hover {
+      color: var(--primary);
+    }
+
+    .auth-message {
+      padding: 12px 16px;
+      margin: 16px 0;
+      border-radius: var(--radius-md);
+      text-align: center;
+      font-size: 0.9rem;
+      display: none;
+    }
+
+    .auth-message-success {
+      background: rgba(76, 175, 80, 0.15);
+      color: #4caf50;
+      border: 1px solid rgba(76, 175, 80, 0.3);
+    }
+
+    .auth-message-error {
+      background: rgba(244, 67, 54, 0.15);
+      color: #f44336;
+      border: 1px solid rgba(244, 67, 54, 0.3);
+    }
+
+    .auth-message-info {
+      background: rgba(33, 150, 243, 0.15);
+      color: #2196f3;
+      border: 1px solid rgba(33, 150, 243, 0.3);
+    }
+  </style>
+</head>
+<body class="auth-page">
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="./index.html" class="brand" aria-label="Accueil DevEarn">
+        <span class="brand-mark" aria-hidden="true">
+          <span class="brand-dev">Dev</span><span class="brand-amp">&amp;</span><span class="brand-earn">Earn</span>
+        </span>
+      </a>
+      <nav class="main-nav" aria-label="Navigation principale">
+        <button class="nav-toggle" type="button" aria-label="Ouvrir le menu">
+          <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-list">
+          <li><a href="./index.html" class="is-current">Accueil</a></li>
+          <li><a href="./projects.html">Projets</a></li>
+          <li><a href="./student-space.html">Étudiants</a></li>
+          <li><a href="./client-space.html">Entreprises</a></li>
+          <li><a href="./dashboard.html">Dashboard</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <button class="theme-toggle" type="button" aria-label="Basculer le thème">
+          <span class="theme-toggle-icon">◐</span>
+        </button>
+        <a href="./login.html" class="btn btn-ghost" id="nav-login-btn">Connexion</a>
+        <a href="./register.html" class="btn btn-primary" id="nav-register-btn">Inscription</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="auth-section">
+      <div class="container">
+        <div class="verification-container">
+          <div class="auth-card glass-card">
+            <h2>Vérifier votre email</h2>
+            <p>Nous avons envoyé un code de vérification à votre adresse email. Entrez-le ci-dessous.</p>
+
+            <div id="auth-message" class="auth-message"></div>
+
+            <div class="verification-steps">
+              <strong>Comment ça marche ?</strong>
+              <ol>
+                <li>Vérifiez votre boîte de réception</li>
+                <li>Trouvez le code à 6 chiffres</li>
+                <li>Entrez-le ci-dessous</li>
+                <li>Validez pour activer votre compte</li>
+              </ol>
+            </div>
+
+            <div class="code-display">
+              <input
+                type="text"
+                id="verificationCode"
+                class="code-input"
+                placeholder="000000"
+                maxlength="6"
+                inputmode="numeric"
+                autocomplete="off"
+              />
+            </div>
+
+            <button type="submit" class="btn-hero btn-hero-full" onclick="handleVerify()">
+              Vérifier le code <span class="btn-hero-arrow">→</span>
+            </button>
+
+            <div class="resend-section">
+              <p class="resend-text">Vous n'avez pas reçu le code ?</p>
+              <button type="button" class="resend-button" id="resendBtn" onclick="handleResend()">
+                Renvoyer le code
+              </button>
+            </div>
+
+            <a href="./index.html" class="back-link">Retour à l'accueil</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="./index.html" class="brand footer-brand-link" aria-label="Accueil DevEarn">
+          <span class="brand-mark" aria-hidden="true">
+            <span class="brand-dev">Dev</span><span class="brand-amp">&amp;</span><span class="brand-earn">Earn</span>
+          </span>
+        </a>
+        <p>Plateforme marocaine de talents IT.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./js/auth-api.js"></script>
+  <script>
+    let resendTimeout = 0;
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const email = localStorage.getItem('pendingEmail');
+      if (!email) {
+        window.location.href = './register.html';
+        return;
+      }
+
+      // Auto-format code input (numbers only)
+      const codeInput = document.getElementById('verificationCode');
+      codeInput.addEventListener('keydown', (e) => {
+        if (!/[0-9]/.test(e.key) && !['Backspace', 'Tab', 'ArrowLeft', 'ArrowRight', 'Delete'].includes(e.key)) {
+          e.preventDefault();
+        }
+      });
+
+      // Auto-submit on 6 digits
+      codeInput.addEventListener('input', (e) => {
+        if (e.target.value.length === 6) {
+          handleVerify();
+        }
+      });
+
+      // Load theme
+      const html = document.documentElement;
+      const savedTheme = localStorage.getItem('theme') || 'dark';
+      html.setAttribute('data-theme', savedTheme);
+    });
+
+    function handleVerify() {
+      const email = localStorage.getItem('pendingEmail');
+      const code = document.getElementById('verificationCode').value;
+
+      if (!code || code.length !== 6 || !/^\d+$/.test(code)) {
+        showNotification('Le code doit contenir 6 chiffres', 'error');
+        return;
+      }
+
+      verifyEmail(email, code);
+    }
+
+    function handleResend() {
+      const email = localStorage.getItem('pendingEmail');
+      const resendBtn = document.getElementById('resendBtn');
+
+      resendBtn.disabled = true;
+      resendBtn.textContent = 'Envoi en cours...';
+
+      resendVerificationCode(email).then((success) => {
+        if (success) {
+          resendTimeout = 60;
+          updateResendButton();
+        } else {
+          resendBtn.disabled = false;
+          resendBtn.textContent = 'Renvoyer le code';
+        }
+      });
+    }
+
+    function updateResendButton() {
+      const resendBtn = document.getElementById('resendBtn');
+      if (resendTimeout > 0) {
+        resendBtn.textContent = `Renvoyer dans ${resendTimeout}s`;
+        resendBtn.disabled = true;
+        resendTimeout--;
+        setTimeout(updateResendButton, 1000);
+      } else {
+        resendBtn.textContent = 'Renvoyer le code';
+        resendBtn.disabled = false;
+      }
+    }
+  </script>
+</body>
+</html>

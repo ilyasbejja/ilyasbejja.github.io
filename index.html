@@ -5,10 +5,24 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>DevEarn — Talents IT &amp; projets réels</title>
-  <meta name="description" content="DevEarn connecte les étudiants IT et les entreprises autour de missions réelles et rémunérées." />
+  <meta name="description"
+    content="DevEarn connecte les étudiants IT et les entreprises autour de missions réelles et rémunérées." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+  <style>
+    /* Private Dashboard Mode */
+    body.is-logged-in #projects-section .page-hero,
+    body.is-logged-in #students-section .page-hero {
+      display: none !important;
+    }
+
+    body.is-logged-in #projects-section,
+    body.is-logged-in #students-section {
+      padding-top: 100px;
+    }
+  </style>
   <link rel="stylesheet" href="./css/global.css" />
   <link rel="stylesheet" href="./css/home.css" />
 </head>
@@ -24,13 +38,17 @@
             <span class="brand-dev">Dev</span><span class="brand-amp">&amp;</span><span class="brand-earn">Earn</span>
           </span>
         </a>
-        <span style="color: var(--text-muted); opacity: 0.3; font-weight: 300; font-size: 1.2rem; user-select: none;">|</span>
+        <span
+          style="color: var(--text-muted); opacity: 0.3; font-weight: 300; font-size: 1.2rem; user-select: none;">|</span>
         <div class="header-partner-logos" style="display: flex; align-items: center; gap: 8px;">
           <img src="./assets/images/INPT.svg" alt="INPT" class="header-cri-logo" style="height: 22px;" />
-          <span style="color: var(--text-muted); opacity: 0.2; font-weight: 300; font-size: 0.9rem; user-select: none;">×</span>
+          <span
+            style="color: var(--text-muted); opacity: 0.2; font-weight: 300; font-size: 0.9rem; user-select: none;">×</span>
           <img src="./assets/images/ANRT.svg" alt="ANRT" class="header-cri-logo" style="height: 22px;" />
-          <span style="color: var(--text-muted); opacity: 0.2; font-weight: 300; font-size: 0.9rem; user-select: none;">×</span>
-          <img src="./assets/images/Centre régional d'investissement - Maroc.svg" alt="CRI Maroc" class="header-cri-logo" style="height: 22px;" />
+          <span
+            style="color: var(--text-muted); opacity: 0.2; font-weight: 300; font-size: 0.9rem; user-select: none;">×</span>
+          <img src="./assets/images/Centre régional d'investissement - Maroc.svg" alt="CRI Maroc"
+            class="header-cri-logo" style="height: 22px;" />
         </div>
       </div>
       <nav class="main-nav" aria-label="Navigation principale">
@@ -49,12 +67,10 @@
         <button class="theme-toggle" type="button" aria-label="Basculer le thème">
           <span class="theme-toggle-icon">◐</span>
         </button>
-        <button type="button" class="btn btn-ghost" data-open-modal="login-modal">Connexion</button>
-        <button type="button" class="btn btn-primary" data-open-modal="register-modal">Inscription</button>
+        <button type="button" class="btn btn-ghost" id="nav-login-btn" data-open-modal="login-modal">Connexion</button>
+        <button type="button" class="btn btn-primary" id="nav-register-btn" data-open-modal="register-modal">Inscription</button>
       </div>
     </div>
-  </header>
-
   </header>
 
   <main id="main-content">
@@ -67,9 +83,11 @@
           <div class="marquee-track marquee-right">
             <div class="marquee-content">
               <img src="./assets/images/ENTR/Attijariwafa Bank.svg" alt="Attijariwafa Bank" class="partner-logo" />
-              <img src="./assets/images/ENTR/BCP  Banque Populaire du Maroc.svg" alt="Banque Populaire" class="partner-logo" />
+              <img src="./assets/images/ENTR/BCP  Banque Populaire du Maroc.svg" alt="Banque Populaire"
+                class="partner-logo" />
               <img src="./assets/images/ENTR/BNP Paribas.svg" alt="BNP Paribas" class="partner-logo" />
-              <img src="./assets/images/ENTR/Bank al maghrib بنك المغرب.svg" alt="Bank Al Maghrib" class="partner-logo" />
+              <img src="./assets/images/ENTR/Bank al maghrib بنك المغرب.svg" alt="Bank Al Maghrib"
+                class="partner-logo" />
               <img src="./assets/images/ENTR/CDG.svg" alt="CDG" class="partner-logo" />
               <img src="./assets/images/ENTR/CIH Bank.svg" alt="CIH Bank" class="partner-logo" />
               <img src="./assets/images/ENTR/Inwi.svg" alt="Inwi" class="partner-logo" />
@@ -123,7 +141,8 @@
                   </span>
                   <span class="hero-logo-sep">×</span>
                   <span class="hero-inline-logo-wrap hero-inline-logo-wide">
-                    <img src="./assets/images/Centre régional d'investissement - Maroc.svg" alt="CRI Maroc" class="hero-inline-logo" />
+                    <img src="./assets/images/Centre régional d'investissement - Maroc.svg" alt="CRI Maroc"
+                      class="hero-inline-logo" />
                   </span>
                 </div>
               </div>
@@ -149,12 +168,14 @@
       <!-- HERO PROJETS -->
       <section class="page-hero">
         <div class="container page-hero-inner">
-          <p class="page-hero-eyebrow">Missions disponibles</p>
+          <p class="page-hero-eyebrow">Projets disponibles</p>
           <div class="page-typed-box">
-            <h1 id="typed-projects" class="page-typed-slogan" data-typed-phrase="Des missions réelles pour des talents d'exception."></h1>
+            <h1 id="typed-projects" class="page-typed-slogan"
+              data-typed-phrase="Des missions réelles pour des talents d'exception."></h1>
           </div>
-          <p class="page-hero-sub">Filtrez par catégorie ou niveau · Postulez en un clic · Commencez à gagner dès maintenant.</p>
-                    
+          <p class="page-hero-sub">Filtrez par catégorie ou niveau · Postulez en un clic · Commencez à gagner dès
+            maintenant.</p>
+
           <!-- Action Buttons -->
           <div class="hero-actions">
             <button type="button" class="btn-hero" data-open-modal="post-project-modal">
@@ -165,7 +186,7 @@
               Découvrir les projets disponibles
             </button>
           </div>
-          
+
           <div class="kpi-strip-grid" style="width: 100%; margin-top: 12px;">
             <div class="kpi-strip-card">
               <strong class="kpi-strip-val count-up" data-target="126" data-suffix="+">0</strong>
@@ -222,197 +243,7 @@
       <section class="trending-projects" style="padding-bottom: 80px;">
         <div class="container">
           <div class="projects-grid" id="projects-grid">
-            
-            <article class="project-card glass-card" data-category="data" data-level="advanced">
-              <div class="project-top">
-                <div class="project-company-info">
-                  <img src="./assets/images/ENTR/Attijariwafa Bank.svg" alt="Attijariwafa Bank" class="project-company-logo" />
-                  <span class="project-company-name">Attijariwafa Bank</span>
-                </div>
-                <span class="project-rating">4.9 ★</span>
-              </div>
-              <h3>Pipeline de scoring crédit &amp; ML</h3>
-              <p>Conception d'un modèle d'évaluation de risque de défaut avec pipeline d'intégration de données et rapport KPI interactif.</p>
-              <div class="project-meta">
-                <span>Data / IA</span><span>·</span><span>Avancé</span>
-              </div>
-              <div class="project-footer">
-                <span class="project-budget">25k - 40k MAD</span>
-                <button type="button" class="btn btn-outline btn-sm" data-open-modal="login-modal">Postuler</button>
-              </div>
-            </article>
-
-            <article class="project-card glass-card" data-category="design" data-level="intermediate">
-              <div class="project-top">
-                <div class="project-company-info">
-                  <img src="./assets/images/ENTR/Orange.svg" alt="Orange" class="project-company-logo" />
-                  <span class="project-company-name">Orange Maroc</span>
-                </div>
-                <span class="project-rating">4.8 ★</span>
-              </div>
-              <h3>Refonte UX/UI application MyOrange</h3>
-              <p>Modernisation des parcours utilisateurs, création d'un design system complet sous Figma et prototypes interactifs de haute fidélité.</p>
-              <div class="project-meta">
-                <span>Design UI/UX</span><span>·</span><span>Intermédiaire</span>
-              </div>
-              <div class="project-footer">
-                <span class="project-budget">15k - 20k MAD</span>
-                <button type="button" class="btn btn-outline btn-sm" data-open-modal="login-modal">Postuler</button>
-              </div>
-            </article>
-
-            <article class="project-card glass-card" data-category="cyber" data-level="advanced">
-              <div class="project-top">
-                <div class="project-company-info">
-                  <img src="./assets/images/ENTR/CIH Bank.svg" alt="CIH Bank" class="project-company-logo" />
-                  <span class="project-company-name">CIH Bank</span>
-                </div>
-                <span class="project-rating">4.9 ★</span>
-              </div>
-              <h3>Audit de sécurité &amp; Pentesting web</h3>
-              <p>Audit approfondi des vulnérabilités OWASP sur notre nouveau portail de paiement et rédaction d'un plan de remédiation complet.</p>
-              <div class="project-meta">
-                <span>Cybersécurité</span><span>·</span><span>Avancé</span>
-              </div>
-              <div class="project-footer">
-                <span class="project-budget">30k - 50k MAD</span>
-                <button type="button" class="btn btn-outline btn-sm" data-open-modal="login-modal">Postuler</button>
-              </div>
-            </article>
-
-            <article class="project-card glass-card" data-category="web" data-level="intermediate">
-              <div class="project-top">
-                <div class="project-company-info">
-                  <img src="./assets/images/ENTR/BCP  Banque Populaire du Maroc.svg" alt="Banque Populaire" class="project-company-logo" />
-                  <span class="project-company-name">Banque Populaire</span>
-                </div>
-                <span class="project-rating">4.7 ★</span>
-              </div>
-              <h3>Portail Web de Microfinance</h3>
-              <p>Développement en React/Node.js d'un portail web dynamique permettant la gestion et le suivi des demandes de micro-crédits.</p>
-              <div class="project-meta">
-                <span>Développement Web</span><span>·</span><span>Intermédiaire</span>
-              </div>
-              <div class="project-footer">
-                <span class="project-budget">18k - 25k MAD</span>
-                <button type="button" class="btn btn-outline btn-sm" data-open-modal="login-modal">Postuler</button>
-              </div>
-            </article>
-
-            <article class="project-card glass-card" data-category="data" data-level="intermediate">
-              <div class="project-top">
-                <div class="project-company-info">
-                  <img src="./assets/images/ENTR/CDG.svg" alt="CDG" class="project-company-logo" />
-                  <span class="project-company-name">CDG Maroc</span>
-                </div>
-                <span class="project-rating">4.8 ★</span>
-              </div>
-              <h3>Dashboard de suivi des investissements</h3>
-              <p>Création d'un tableau de bord décisionnel PowerBI connecté à un entrepôt de données SQL pour le suivi des fonds durables.</p>
-              <div class="project-meta">
-                <span>Data / IA</span><span>·</span><span>Intermédiaire</span>
-              </div>
-              <div class="project-footer">
-                <span class="project-budget">12k - 18k MAD</span>
-                <button type="button" class="btn btn-outline btn-sm" data-open-modal="login-modal">Postuler</button>
-              </div>
-            </article>
-
-            <article class="project-card glass-card" data-category="web" data-level="junior">
-              <div class="project-top">
-                <div class="project-company-info">
-                  <img src="./assets/images/ENTR/Maroc Telecom Logo (2025).svg" alt="Maroc Telecom" class="project-company-logo" />
-                  <span class="project-company-name">Maroc Telecom</span>
-                </div>
-                <span class="project-rating">4.5 ★</span>
-              </div>
-              <h3>Portail d'abonnement Fibre Optique</h3>
-              <p>Intégration d'un mini-site dynamique d'inscription et de vérification d'éligibilité géographique à la fibre avec carte interactive.</p>
-              <div class="project-meta">
-                <span>Développement Web</span><span>·</span><span>Junior</span>
-              </div>
-              <div class="project-footer">
-                <span class="project-budget">8k - 12k MAD</span>
-                <button type="button" class="btn btn-outline btn-sm" data-open-modal="login-modal">Postuler</button>
-              </div>
-            </article>
-
-            <article class="project-card glass-card" data-category="data" data-level="advanced">
-              <div class="project-top">
-                <div class="project-company-info">
-                  <img src="./assets/images/ENTR/Safran.svg" alt="Safran" class="project-company-logo" />
-                  <span class="project-company-name">Safran Maroc</span>
-                </div>
-                <span class="project-rating">4.9 ★</span>
-              </div>
-              <h3>Optimisation de maintenance prédictive</h3>
-              <p>Mise en place d'un modèle d'apprentissage supervisé pour prédire l'usure de pièces moteur à partir de données de capteurs IoT.</p>
-              <div class="project-meta">
-                <span>Data / IA</span><span>·</span><span>Avancé</span>
-              </div>
-              <div class="project-footer">
-                <span class="project-budget">35k - 50k MAD</span>
-                <button type="button" class="btn btn-outline btn-sm" data-open-modal="login-modal">Postuler</button>
-              </div>
-            </article>
-
-            <article class="project-card glass-card" data-category="automation" data-level="junior">
-              <div class="project-top">
-                <div class="project-company-info">
-                  <img src="./assets/images/ENTR/TGCC.svg" alt="TGCC" class="project-company-logo" />
-                  <span class="project-company-name">TGCC</span>
-                </div>
-                <span class="project-rating">4.6 ★</span>
-              </div>
-              <h3>Automatisation de rapports de chantier</h3>
-              <p>Script d'extraction automatique d'images et données de formulaire terrain vers un modèle de rapport PDF consolidé envoyé par mail.</p>
-              <div class="project-meta">
-                <span>Automatisation</span><span>·</span><span>Junior</span>
-              </div>
-              <div class="project-footer">
-                <span class="project-budget">6k - 10k MAD</span>
-                <button type="button" class="btn btn-outline btn-sm" data-open-modal="login-modal">Postuler</button>
-              </div>
-            </article>
-
-            <article class="project-card glass-card" data-category="web" data-level="junior">
-              <div class="project-top">
-                <div class="project-company-info">
-                  <img src="./assets/images/ENTR/Dsys Maroc.svg" alt="Dsys Maroc" class="project-company-logo" />
-                  <span class="project-company-name">Dsys Maroc</span>
-                </div>
-                <span class="project-rating">4.6 ★</span>
-              </div>
-              <h3>Mini-site d'événements IT marocains</h3>
-              <p>Développement d'une single page application vitrine avec formulaire d'inscription et intégration du planning des conférences.</p>
-              <div class="project-meta">
-                <span>Développement Web</span><span>·</span><span>Junior</span>
-              </div>
-              <div class="project-footer">
-                <span class="project-budget">5k - 8k MAD</span>
-                <button type="button" class="btn btn-outline btn-sm" data-open-modal="login-modal">Postuler</button>
-              </div>
-            </article>
-
-            <article class="project-card glass-card" data-category="cyber" data-level="advanced">
-              <div class="project-top">
-                <div class="project-company-info">
-                  <img src="./assets/images/ENTR/bank of africa logo.svg" alt="Bank Of Africa" class="project-company-logo" />
-                  <span class="project-company-name">Bank Of Africa</span>
-                </div>
-                <span class="project-rating">4.8 ★</span>
-              </div>
-              <h3>Mise en conformité sécurité API bancaires</h3>
-              <p>Audit d'architecture, analyse des entêtes HTTP et renforcement de l'authentification OAuth2 sur l'ensemble de nos endpoints.</p>
-              <div class="project-meta">
-                <span>Cybersécurité</span><span>·</span><span>Avancé</span>
-              </div>
-              <div class="project-footer">
-                <span class="project-budget">30k - 45k MAD</span>
-                <button type="button" class="btn btn-outline btn-sm" data-open-modal="login-modal">Postuler</button>
-              </div>
-            </article>
-
+            <div style="grid-column: 1/-1; text-align:center; padding: 40px; color: var(--text-muted);">Chargement des missions...</div>
           </div>
         </div>
       </section>
@@ -425,13 +256,14 @@
         <div class="container page-hero-inner">
           <p class="page-hero-eyebrow">Espace Talents</p>
           <div class="page-typed-box">
-            <h1 id="typed-students" class="page-typed-slogan" data-typed-phrase="Votre talent mérite d'être reconnu."></h1>
+            <h1 id="typed-students" class="page-typed-slogan" data-typed-phrase="Votre talent mérite d'être reconnu.">
+            </h1>
           </div>
           <p class="page-hero-sub">Découvrez les profils d'étudiants IT les plus performants, notés et recommandés.</p>
-          
+
           <!-- Action Buttons -->
           <div class="hero-actions">
-            <button type="button" class="btn-hero" data-open-modal="register-modal">
+            <button type="button" class="btn-hero" data-open-modal="register-modal" data-preselect-role="Étudiant">
               S'inscrire en tant qu'étudiant
               <span class="btn-hero-arrow">→</span>
             </button>
@@ -488,7 +320,7 @@
                     <th style="text-align: right;">Score d'XP</th>
                   </tr>
                 </thead>
-                <tbody>
+                <tbody id="students-ranking-tbody">
                   <tr>
                     <td style="font-weight: 700; color: var(--primary);">#1</td>
                     <td>
@@ -586,13 +418,16 @@
         <div class="container page-hero-inner">
           <p class="page-hero-eyebrow">Partenaires Tech</p>
           <div class="page-typed-box">
-            <h1 id="typed-clients" class="page-typed-slogan" data-typed-phrase="Les entreprises qui font confiance à nos talents."></h1>
+            <h1 id="typed-clients" class="page-typed-slogan"
+              data-typed-phrase="Les entreprises qui font confiance à nos talents."></h1>
           </div>
-          <p class="page-hero-sub">Découvrez les entreprises leaders classées par volume de projets et étudiants engagés.</p>
-          
+          <p class="page-hero-sub">Découvrez les entreprises leaders classées par volume de projets et étudiants
+            engagés.</p>
+
           <!-- Action Buttons -->
           <div class="hero-actions">
-            <button type="button" class="btn-hero" data-open-modal="register-modal">
+            <button type="button" class="btn-hero" data-open-modal="register-modal"
+              data-preselect-role="Client / Entreprise">
               S'inscrire en tant qu'entreprise
               <span class="btn-hero-arrow">→</span>
             </button>
@@ -668,7 +503,8 @@
                     <td style="font-weight: 700; color: var(--primary);">#2</td>
                     <td>
                       <div class="student-row-info">
-                        <img src="./assets/images/ENTR/Attijariwafa Bank.svg" alt="Attijariwafa" style="height: 22px; width: auto;" />
+                        <img src="./assets/images/ENTR/Attijariwafa Bank.svg" alt="Attijariwafa"
+                          style="height: 22px; width: auto;" />
                         <span class="student-row-name">Attijariwafa Bank</span>
                       </div>
                     </td>
@@ -735,9 +571,11 @@
         <div class="container page-hero-inner">
           <p class="page-hero-eyebrow">Analytics Cockpit</p>
           <div class="page-typed-box">
-            <h1 id="typed-dashboard" class="page-typed-slogan" data-typed-phrase="Suivez la croissance et l'impact en temps réel."></h1>
+            <h1 id="typed-dashboard" class="page-typed-slogan"
+              data-typed-phrase="Suivez la croissance et l'impact en temps réel."></h1>
           </div>
-          <p class="page-hero-sub">Données en direct concernant l'activité globale, les étudiants et les entreprises partenaires.</p>
+          <p class="page-hero-sub">Données en direct concernant l'activité globale, les étudiants et les entreprises
+            partenaires.</p>
         </div>
       </section>
 
@@ -772,9 +610,10 @@
       <!-- GRAPHIQUES -->
       <section class="dashboard-main" style="padding-bottom: 80px;">
         <div class="container dashboard-main-grid">
-          
+
           <div class="dashboard-left">
-            <div class="dashboard-card glass-card" style="padding: clamp(20px, 4vw, 32px); border-radius: var(--radius-xl);">
+            <div class="dashboard-card glass-card"
+              style="padding: clamp(20px, 4vw, 32px); border-radius: var(--radius-xl);">
               <div class="card-head" style="margin-bottom: 24px;">
                 <div>
                   <span class="section-chip">Activité</span>
@@ -782,37 +621,40 @@
                 </div>
                 <div class="dashboard-live">Mise à jour live</div>
               </div>
-              
+
               <!-- SVG Line Chart -->
               <div class="svg-chart-container" style="position: relative; height: 280px; width: 100%;">
-                <svg viewBox="0 0 500 240" class="premium-chart-svg" style="width: 100%; height: 100%; overflow: visible;">
+                <svg viewBox="0 0 500 240" class="premium-chart-svg"
+                  style="width: 100%; height: 100%; overflow: visible;">
                   <defs>
                     <linearGradient id="chartGlow" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="0%" stop-color="var(--primary)" stop-opacity="0.25"/>
-                      <stop offset="100%" stop-color="var(--primary)" stop-opacity="0.00"/>
+                      <stop offset="0%" stop-color="var(--primary)" stop-opacity="0.25" />
+                      <stop offset="100%" stop-color="var(--primary)" stop-opacity="0.00" />
                     </linearGradient>
                     <linearGradient id="blueGlow" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="0%" stop-color="#4dabf7" stop-opacity="0.20"/>
-                      <stop offset="100%" stop-color="#4dabf7" stop-opacity="0.00"/>
+                      <stop offset="0%" stop-color="#4dabf7" stop-opacity="0.20" />
+                      <stop offset="100%" stop-color="#4dabf7" stop-opacity="0.00" />
                     </linearGradient>
                   </defs>
-                  
+
                   <!-- Y-Axis Grid Lines -->
                   <line x1="40" y1="30" x2="480" y2="30" stroke="var(--border)" stroke-dasharray="4 4" />
                   <line x1="40" y1="80" x2="480" y2="80" stroke="var(--border)" stroke-dasharray="4 4" />
                   <line x1="40" y1="130" x2="480" y2="130" stroke="var(--border)" stroke-dasharray="4 4" />
                   <line x1="40" y1="180" x2="480" y2="180" stroke="var(--border)" stroke-dasharray="4 4" />
-                  
+
                   <!-- Fill Area (Gradient) -->
                   <path d="M 40 180 Q 140 140 200 120 T 360 80 T 480 40 L 480 180 Z" fill="url(#chartGlow)" />
                   <path d="M 40 180 Q 140 160 200 150 T 360 110 T 480 80 L 480 180 Z" fill="url(#blueGlow)" />
-                  
+
                   <!-- Primary Line (Projects) -->
-                  <path d="M 40 180 Q 140 140 200 120 T 360 80 T 480 40" fill="none" stroke="var(--primary)" stroke-width="3" stroke-linecap="round" />
-                  
+                  <path d="M 40 180 Q 140 140 200 120 T 360 80 T 480 40" fill="none" stroke="var(--primary)"
+                    stroke-width="3" stroke-linecap="round" />
+
                   <!-- Secondary Line (Students) -->
-                  <path d="M 40 180 Q 140 160 200 150 T 360 110 T 480 80" fill="none" stroke="#4dabf7" stroke-width="2.5" stroke-dasharray="5 5" stroke-linecap="round" />
-                  
+                  <path d="M 40 180 Q 140 160 200 150 T 360 110 T 480 80" fill="none" stroke="#4dabf7"
+                    stroke-width="2.5" stroke-dasharray="5 5" stroke-linecap="round" />
+
                   <!-- Data Dots (Projects) -->
                   <circle cx="40" cy="180" r="4.5" fill="#030305" stroke="var(--primary)" stroke-width="2.5" />
                   <circle cx="150" cy="138" r="4.5" fill="#030305" stroke="var(--primary)" stroke-width="2.5" />
@@ -821,62 +663,85 @@
                   <circle cx="480" cy="40" r="4.5" fill="#030305" stroke="var(--primary)" stroke-width="2.5" />
 
                   <!-- Labels -->
-                  <text x="40" y="205" fill="var(--text-muted)" font-size="10" font-weight="600" text-anchor="middle" font-family="var(--font-body)">Jan</text>
-                  <text x="150" y="205" fill="var(--text-muted)" font-size="10" font-weight="600" text-anchor="middle" font-family="var(--font-body)">Fév</text>
-                  <text x="260" y="205" fill="var(--text-muted)" font-size="10" font-weight="600" text-anchor="middle" font-family="var(--font-body)">Mar</text>
-                  <text x="370" y="205" fill="var(--text-muted)" font-size="10" font-weight="600" text-anchor="middle" font-family="var(--font-body)">Avr</text>
-                  <text x="480" y="205" fill="var(--text-muted)" font-size="10" font-weight="600" text-anchor="middle" font-family="var(--font-body)">Mai</text>
+                  <text x="40" y="205" fill="var(--text-muted)" font-size="10" font-weight="600" text-anchor="middle"
+                    font-family="var(--font-body)">Jan</text>
+                  <text x="150" y="205" fill="var(--text-muted)" font-size="10" font-weight="600" text-anchor="middle"
+                    font-family="var(--font-body)">Fév</text>
+                  <text x="260" y="205" fill="var(--text-muted)" font-size="10" font-weight="600" text-anchor="middle"
+                    font-family="var(--font-body)">Mar</text>
+                  <text x="370" y="205" fill="var(--text-muted)" font-size="10" font-weight="600" text-anchor="middle"
+                    font-family="var(--font-body)">Avr</text>
+                  <text x="480" y="205" fill="var(--text-muted)" font-size="10" font-weight="600" text-anchor="middle"
+                    font-family="var(--font-body)">Mai</text>
 
                   <!-- Y labels -->
-                  <text x="30" y="183" fill="var(--text-muted)" font-size="9" font-weight="600" text-anchor="end" font-family="var(--font-body)">0</text>
-                  <text x="30" y="133" fill="var(--text-muted)" font-size="9" font-weight="600" text-anchor="end" font-family="var(--font-body)">40</text>
-                  <text x="30" y="83" fill="var(--text-muted)" font-size="9" font-weight="600" text-anchor="end" font-family="var(--font-body)">80</text>
-                  <text x="30" y="33" fill="var(--text-muted)" font-size="9" font-weight="600" text-anchor="end" font-family="var(--font-body)">120</text>
+                  <text x="30" y="183" fill="var(--text-muted)" font-size="9" font-weight="600" text-anchor="end"
+                    font-family="var(--font-body)">0</text>
+                  <text x="30" y="133" fill="var(--text-muted)" font-size="9" font-weight="600" text-anchor="end"
+                    font-family="var(--font-body)">40</text>
+                  <text x="30" y="83" fill="var(--text-muted)" font-size="9" font-weight="600" text-anchor="end"
+                    font-family="var(--font-body)">80</text>
+                  <text x="30" y="33" fill="var(--text-muted)" font-size="9" font-weight="600" text-anchor="end"
+                    font-family="var(--font-body)">120</text>
                 </svg>
               </div>
-              <div class="chart-custom-legend" style="display: flex; gap: 20px; justify-content: center; margin-top: 16px;">
-                <span style="display: inline-flex; align-items: center; gap: 8px; font-size: 0.85rem; color: var(--text-soft); font-weight: 600;">
-                  <span style="width: 12px; height: 3px; background: var(--primary); display: inline-block; border-radius: 2px;"></span>
+              <div class="chart-custom-legend"
+                style="display: flex; gap: 20px; justify-content: center; margin-top: 16px;">
+                <span
+                  style="display: inline-flex; align-items: center; gap: 8px; font-size: 0.85rem; color: var(--text-soft); font-weight: 600;">
+                  <span
+                    style="width: 12px; height: 3px; background: var(--primary); display: inline-block; border-radius: 2px;"></span>
                   Projets publiés
                 </span>
-                <span style="display: inline-flex; align-items: center; gap: 8px; font-size: 0.85rem; color: var(--text-soft); font-weight: 600;">
-                  <span style="width: 12px; height: 3px; background: #4dabf7; display: inline-block; border-radius: 2px; border-top: 1px dashed #fff;"></span>
+                <span
+                  style="display: inline-flex; align-items: center; gap: 8px; font-size: 0.85rem; color: var(--text-soft); font-weight: 600;">
+                  <span
+                    style="width: 12px; height: 3px; background: #4dabf7; display: inline-block; border-radius: 2px; border-top: 1px dashed #fff;"></span>
                   Étudiants actifs
                 </span>
               </div>
             </div>
 
-            <div class="dashboard-card glass-card" style="padding: clamp(20px, 4vw, 32px); border-radius: var(--radius-xl);">
+            <div class="dashboard-card glass-card"
+              style="padding: clamp(20px, 4vw, 32px); border-radius: var(--radius-xl);">
               <div class="card-head" style="margin-bottom: 24px;">
                 <div>
                   <span class="section-chip">Domaines</span>
                   <h2>Répartition Thématique des Projets</h2>
                 </div>
               </div>
-              
-              <div class="donut-chart-layout" style="display: flex; flex-wrap: wrap; gap: 32px; align-items: center; justify-content: center;">
+
+              <div class="donut-chart-layout"
+                style="display: flex; flex-wrap: wrap; gap: 32px; align-items: center; justify-content: center;">
                 <!-- SVG Donut -->
                 <div style="flex-shrink: 0; display: flex; justify-content: center; width: 160px; height: 160px;">
                   <svg viewBox="0 0 200 200" class="premium-donut-svg" style="width: 100%; height: 100%;">
                     <circle cx="100" cy="100" r="70" fill="none" stroke="var(--border)" stroke-width="18" />
                     <!-- Web (40% - 175.9 length) -->
-                    <circle cx="100" cy="100" r="70" fill="none" stroke="var(--primary)" stroke-width="18" 
-                            stroke-dasharray="175.9 439.8" stroke-dashoffset="0" transform="rotate(-90 100 100)" stroke-linecap="round" />
+                    <circle cx="100" cy="100" r="70" fill="none" stroke="var(--primary)" stroke-width="18"
+                      stroke-dasharray="175.9 439.8" stroke-dashoffset="0" transform="rotate(-90 100 100)"
+                      stroke-linecap="round" />
                     <!-- Data/IA (30% - 131.9 length) -->
-                    <circle cx="100" cy="100" r="70" fill="none" stroke="#ff922b" stroke-width="18" 
-                            stroke-dasharray="131.9 439.8" stroke-dashoffset="-175.9" transform="rotate(-90 100 100)" stroke-linecap="round" />
+                    <circle cx="100" cy="100" r="70" fill="none" stroke="#ff922b" stroke-width="18"
+                      stroke-dasharray="131.9 439.8" stroke-dashoffset="-175.9" transform="rotate(-90 100 100)"
+                      stroke-linecap="round" />
                     <!-- Design UI/UX (15% - 66 length) -->
-                    <circle cx="100" cy="100" r="70" fill="none" stroke="#4dabf7" stroke-width="18" 
-                            stroke-dasharray="66.0 439.8" stroke-dashoffset="-307.8" transform="rotate(-90 100 100)" stroke-linecap="round" />
+                    <circle cx="100" cy="100" r="70" fill="none" stroke="#4dabf7" stroke-width="18"
+                      stroke-dasharray="66.0 439.8" stroke-dashoffset="-307.8" transform="rotate(-90 100 100)"
+                      stroke-linecap="round" />
                     <!-- Cybersécurité (10% - 44 length) -->
-                    <circle cx="100" cy="100" r="70" fill="none" stroke="#ff4b6b" stroke-width="18" 
-                            stroke-dasharray="44.0 439.8" stroke-dashoffset="-373.8" transform="rotate(-90 100 100)" stroke-linecap="round" />
+                    <circle cx="100" cy="100" r="70" fill="none" stroke="#ff4b6b" stroke-width="18"
+                      stroke-dasharray="44.0 439.8" stroke-dashoffset="-373.8" transform="rotate(-90 100 100)"
+                      stroke-linecap="round" />
                     <!-- Automatisation (5% - 22 length) -->
-                    <circle cx="100" cy="100" r="70" fill="none" stroke="#9c36b5" stroke-width="18" 
-                            stroke-dasharray="22.0 439.8" stroke-dashoffset="-417.8" transform="rotate(-90 100 100)" stroke-linecap="round" />
-                    
-                    <text x="100" y="96" text-anchor="middle" dominant-baseline="middle" fill="var(--text)" font-size="20" font-weight="800" font-family="var(--font-body)">126</text>
-                    <text x="100" y="116" text-anchor="middle" dominant-baseline="middle" fill="var(--text-muted)" font-size="9" font-weight="700" letter-spacing="1" font-family="var(--font-body)">PROJETS</text>
+                    <circle cx="100" cy="100" r="70" fill="none" stroke="#9c36b5" stroke-width="18"
+                      stroke-dasharray="22.0 439.8" stroke-dashoffset="-417.8" transform="rotate(-90 100 100)"
+                      stroke-linecap="round" />
+
+                    <text x="100" y="96" text-anchor="middle" dominant-baseline="middle" fill="var(--text)"
+                      font-size="20" font-weight="800" font-family="var(--font-body)">126</text>
+                    <text x="100" y="116" text-anchor="middle" dominant-baseline="middle" fill="var(--text-muted)"
+                      font-size="9" font-weight="700" letter-spacing="1" font-family="var(--font-body)">PROJETS</text>
                   </svg>
                 </div>
                 <!-- Legend -->
@@ -914,15 +779,16 @@
           </div>
 
           <aside class="dashboard-right">
-            
-            <div class="dashboard-card glass-card" style="padding: clamp(20px, 4vw, 32px); border-radius: var(--radius-xl);">
+
+            <div class="dashboard-card glass-card"
+              style="padding: clamp(20px, 4vw, 32px); border-radius: var(--radius-xl);">
               <div class="card-head" style="margin-bottom: 24px;">
                 <div>
                   <span class="section-chip">Matching</span>
                   <h2>Indicateurs de Performance</h2>
                 </div>
               </div>
-              
+
               <div class="progress-block">
                 <div class="progress-meta"><span>Vitesse de contractualisation</span><span>92%</span></div>
                 <div class="progress-bar"><span style="width: 92%"></span></div>
@@ -937,20 +803,23 @@
               </div>
             </div>
 
-            <div class="dashboard-card glass-card" style="padding: clamp(20px, 4vw, 32px); border-radius: var(--radius-xl);">
+            <div class="dashboard-card glass-card"
+              style="padding: clamp(20px, 4vw, 32px); border-radius: var(--radius-xl);">
               <div class="card-head" style="margin-bottom: 24px;">
                 <div>
                   <span class="section-chip">Volume financier</span>
                   <h2>Financements Distribués</h2>
                 </div>
               </div>
-              
+
               <div class="finance-status" style="text-align: center; padding: 12px 0;">
                 <div style="font-size: 2.2rem; font-weight: 800; color: var(--primary);">450,000 MAD</div>
-                <div style="font-size: 0.85rem; color: var(--text-muted); font-weight: 600; margin-top: 4px;">Volume de transactions du mois courant</div>
+                <div style="font-size: 0.85rem; color: var(--text-muted); font-weight: 600; margin-top: 4px;">Volume de
+                  transactions du mois courant</div>
               </div>
-              
-              <div style="border-top: 1px solid var(--border); padding-top: 16px; margin-top: 16px; display: flex; justify-content: space-between; font-size: 0.88rem;">
+
+              <div
+                style="border-top: 1px solid var(--border); padding-top: 16px; margin-top: 16px; display: flex; justify-content: space-between; font-size: 0.88rem;">
                 <span style="color: var(--text-muted); font-weight: 500;">Commission moyenne</span>
                 <span style="color: var(--text); font-weight: 700;">10%</span>
               </div>
@@ -962,6 +831,318 @@
 
           </aside>
 
+        </div>
+      </section>
+    </div>
+
+    <!-- 6. CLIENT DASHBOARD SECTION (Re-vamped) -->
+    <div id="client-hub-section" class="app-section">
+      <section class="page-hero">
+        <div class="container page-hero-inner">
+          <p class="page-hero-eyebrow">Espace Entreprise</p>
+          <div class="page-typed-box">
+            <h1 class="page-typed-slogan" style="display: block;" id="client-welcome-msg">Bienvenue sur votre espace,
+              [Client]</h1>
+          </div>
+          <p class="page-hero-sub">Gérez vos projets en cours, recrutez des talents vérifiés et suivez vos budgets.</p>
+        </div>
+      </section>
+
+      <section class="analytics-kpis" style="padding-bottom: 24px;">
+        <div class="container">
+          <div class="analytics-kpi-grid">
+            <article class="analytics-kpi-card glass-card">
+              <span class="kpi-label">Projets Actifs</span>
+              <strong class="kpi-value count-up" id="client-kpi-active" data-target="0">0</strong>
+            </article>
+            <article class="analytics-kpi-card glass-card">
+              <span class="kpi-label">Candidatures Reçues</span>
+              <strong class="kpi-value count-up" id="client-kpi-apps" data-target="0">0</strong>
+              <small class="kpi-trend positive" style="display:none;" id="client-kpi-apps-trend">+x nouvelles</small>
+            </article>
+            <article class="analytics-kpi-card glass-card">
+              <span class="kpi-label">Budget Alloué</span>
+              <strong class="kpi-value count-up" id="client-kpi-budget" data-target="0" data-suffix=" MAD">0
+                MAD</strong>
+            </article>
+            <article class="analytics-kpi-card glass-card">
+              <span class="kpi-label">Projets Terminés</span>
+              <strong class="kpi-value count-up" id="client-kpi-completed" data-target="0">0</strong>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="dashboard-main" style="padding-bottom: 80px;">
+        <div class="container">
+          <div class="dashboard-card glass-card"
+            style="padding: clamp(20px, 4vw, 32px); border-radius: var(--radius-xl);">
+            <div class="card-head"
+              style="margin-bottom: 24px; display: flex; justify-content: space-between; align-items: center;">
+              <div>
+                <span class="section-chip">Vos Projets</span>
+                <h2>Gérez vos offres et candidatures</h2>
+              </div>
+              <button class="btn-hero" data-open-modal="post-project-modal">Publier un projet <span
+                  class="btn-hero-arrow">→</span></button>
+            </div>
+
+            <div style="overflow-x: auto;">
+              <table class="premium-table">
+                <thead>
+                  <tr>
+                    <th>Projet</th>
+                    <th>Catégorie</th>
+                    <th>Budget</th>
+                    <th>Date</th>
+                    <th>Statut</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody id="client-projects-table-body">
+                  <!-- Dynamically populated -->
+                </tbody>
+              </table>
+              <div id="client-projects-empty"
+                style="text-align: center; padding: 40px 0; color: var(--text-muted); display: none;">
+                Vous n'avez pas encore publié de projets.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- 7. STUDENT HUB SECTION -->
+    <div id="student-hub-section" class="app-section">
+      <section class="page-hero">
+        <div class="container page-hero-inner">
+          <p class="page-hero-eyebrow">Mon Hub Talent</p>
+          <div class="page-typed-box">
+            <h1 class="page-typed-slogan" style="display: block;" id="student-welcome-msg">Bonjour, [Etudiant]</h1>
+          </div>
+          <p class="page-hero-sub">Prêt(e) à décrocher votre prochaine mission ? Voici les opportunités qui matchent
+            avec votre profil.</p>
+
+          <div class="hero-actions">
+            <button type="button" class="btn-hero" data-nav-to="my-applications">
+              Mes Candidatures
+            </button>
+            <button type="button" class="btn-hero btn-hero-outline" data-nav-to="projects">
+              Voir toutes les missions
+              <span class="btn-hero-arrow">→</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="analytics-kpis" style="padding-bottom: 24px;">
+        <div class="container">
+          <div class="analytics-kpi-grid">
+            <article class="analytics-kpi-card glass-card">
+              <span class="kpi-label">Projets postulés</span>
+              <strong class="kpi-value" id="student-kpi-applied">0</strong>
+            </article>
+            <article class="analytics-kpi-card glass-card">
+              <span class="kpi-label">Missions actives</span>
+              <strong class="kpi-value" id="student-kpi-active">0</strong>
+            </article>
+            <article class="analytics-kpi-card glass-card"
+              style="border-image: linear-gradient(135deg, var(--primary) 0%, transparent 100%) 1;">
+              <span class="kpi-label">Score d'Expérience (XP)</span>
+              <strong class="kpi-value" style="color: var(--primary);" id="student-kpi-xp">150 XP</strong>
+              <div class="progress-block" style="margin-top: 10px;">
+                <div class="progress-bar" style="height: 4px;"><span style="width: 15%"></span></div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROFIL CARD + MESSAGERIE HUB -->
+      <section class="dashboard-main" style="padding-bottom: 80px;">
+        <div class="container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: start;">
+          <!-- Profile Card -->
+          <div class="dashboard-card glass-card" id="student-profile-card"
+            style="padding: clamp(20px, 4vw, 32px); border-radius: var(--radius-xl);">
+            <!-- populated by student-hub.js -->
+          </div>
+          <!-- Messagerie Card -->
+          <div class="dashboard-card glass-card"
+            style="padding: clamp(20px, 4vw, 32px); border-radius: var(--radius-xl);">
+            <div class="card-head" style="margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center;">
+              <div>
+                <span class="section-chip" style="display: inline-flex; align-items: center; gap: 6px;">
+                  <img src="./assets/icons/messages-2-svgrepo-com.svg" style="height: 14px; width: 14px; filter: invert(1);" alt="" />
+                  Messagerie
+                </span>
+                <h2 style="margin-top: 8px;">Mes Conversations</h2>
+              </div>
+              <span id="student-msg-badge" style="display:none; background:var(--danger); color:#fff; border-radius:50%; width:22px; height:22px; font-size:0.75rem; display:flex; align-items:center; justify-content:center; font-weight:800;">!</span>
+            </div>
+            <div id="student-inbox-preview" style="display: flex; flex-direction: column; gap: 10px;">
+              <div style="text-align:center; padding: 30px; color: var(--text-muted); font-size: 0.9rem;">
+                <div style="margin-bottom: 8px;">
+                  <img src="./assets/icons/messages-2-svgrepo-com.svg" style="height: 24px; width: 24px; opacity: 0.5; filter: invert(1);" alt="" />
+                </div>
+                Chargement des conversations...
+              </div>
+            </div>
+            <button type="button" class="btn btn-outline" onclick="if(window.openModal) window.openModal('inbox-modal')" style="width: 100%; margin-top: 16px;">Voir toutes les conversations →</button>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- 8. MY APPLICATIONS SECTION (Student) -->
+    <div id="my-applications-section" class="app-section">
+      <section class="page-hero" style="padding: 60px 0 40px;">
+        <div class="container">
+          <h2>Mes Candidatures</h2>
+          <p style="color: var(--text-soft);">Suivez l'état de vos demandes auprès des entreprises.</p>
+        </div>
+      </section>
+
+      <section class="dashboard-main" style="padding-bottom: 80px;">
+        <div class="container">
+          <div class="dashboard-card glass-card"
+            style="padding: clamp(20px, 4vw, 32px); border-radius: var(--radius-xl);">
+            <div style="overflow-x: auto;">
+              <table class="premium-table">
+                <thead>
+                  <tr>
+                    <th>Projet</th>
+                    <th>Catégorie</th>
+                    <th>Budget Proposé</th>
+                    <th>Date de candidature</th>
+                    <th>Statut</th>
+                  </tr>
+                </thead>
+                <tbody id="student-applications-tbody">
+                  <!-- JS Populated -->
+                </tbody>
+              </table>
+              <div id="student-applications-empty"
+                style="text-align: center; padding: 40px 0; color: var(--text-muted); display: none;">
+                Vous n'avez pas encore postulé à un projet. Allez dans le hub pour en trouver un !
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- 9. PROJECT APPLICATIONS (Client View) -->
+    <div id="project-applications-section" class="app-section">
+      <section class="page-hero" style="padding: 60px 0 40px;">
+        <div class="container">
+          <button class="btn btn-outline btn-sm" style="margin-bottom: 16px;" data-nav-to="client-hub">← Retour au
+            dashboard</button>
+          <h2 id="project-app-view-title">Candidatures pour le projet</h2>
+          <p style="color: var(--text-soft);">Gérez les talents qui souhaitent travailler sur votre mission.</p>
+        </div>
+      </section>
+
+      <section class="dashboard-main" style="padding-bottom: 80px;">
+        <div class="container">
+          <div class="dashboard-card glass-card"
+            style="padding: clamp(20px, 4vw, 32px); border-radius: var(--radius-xl);">
+            <div style="overflow-x: auto;">
+              <table class="premium-table">
+                <thead>
+                  <tr>
+                    <th>Talent</th>
+                    <th>Email de contact</th>
+                    <th>Date</th>
+                    <th>Message / Motivation</th>
+                    <th>Statut actuel</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="client-project-apps-tbody">
+                  <!-- JS Populated -->
+                </tbody>
+              </table>
+              <div id="client-project-apps-empty"
+                style="text-align: center; padding: 40px 0; color: var(--text-muted); display: none;">
+                Aucune candidature reçue pour le moment.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- 10. LAUREATE HUB SECTION -->
+    <div id="laureate-hub-section" class="app-section">
+      <section class="page-hero">
+        <div class="container page-hero-inner">
+          <p class="page-hero-eyebrow">Espace Lauréat / Mentor</p>
+          <div class="page-typed-box">
+            <h1 class="page-typed-slogan" style="display: block;" id="laureate-welcome-msg">Bienvenue, [Lauréat]</h1>
+          </div>
+          <p class="page-hero-sub">Partagez votre expérience, mentorez les étudiants ou proposez vos propres projets.</p>
+          
+          <div class="hero-actions">
+            <button type="button" class="btn-hero" data-open-modal="post-project-modal">
+              Proposer un projet
+            </button>
+            <button type="button" class="btn-hero btn-hero-outline scroll-trigger" data-scroll-to="laureate-projects">
+              Gérer mes projets
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="analytics-kpis" style="padding-bottom: 24px;">
+        <div class="container">
+          <div class="analytics-kpi-grid">
+            <article class="analytics-kpi-card glass-card">
+              <span class="kpi-label">Projets proposés</span>
+              <strong class="kpi-value count-up" id="laureate-kpi-active" data-target="0">0</strong>
+            </article>
+            <article class="analytics-kpi-card glass-card">
+              <span class="kpi-label">Candidatures reçues</span>
+              <strong class="kpi-value count-up" id="laureate-kpi-apps" data-target="0">0</strong>
+            </article>
+            <article class="analytics-kpi-card glass-card">
+              <span class="kpi-label">Score d'Impact</span>
+              <strong class="kpi-value" style="color: var(--primary);" id="laureate-kpi-xp">0 XP</strong>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="laureate-projects" class="dashboard-main" style="padding-bottom: 80px;">
+        <div class="container">
+          <div class="dashboard-card glass-card" style="padding: clamp(20px, 4vw, 32px); border-radius: var(--radius-xl);">
+            <div class="card-head" style="margin-bottom: 24px; display: flex; justify-content: space-between; align-items: center;">
+              <div>
+                <span class="section-chip">Vos Projets / Mentorats</span>
+                <h2>Gérez vos offres et talents accompagnés</h2>
+              </div>
+            </div>
+
+            <div style="overflow-x: auto;">
+              <table class="premium-table">
+                <thead>
+                  <tr>
+                    <th>Projet / Sujet</th>
+                    <th>Catégorie</th>
+                    <th>Date</th>
+                    <th>Statut</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody id="laureate-projects-tbody">
+                  <!-- Dynamically populated -->
+                </tbody>
+              </table>
+              <div id="laureate-projects-empty" style="text-align: center; padding: 40px 0; color: var(--text-muted); display: none;">
+                Vous n'avez pas encore proposé de projets.
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </div>
@@ -980,16 +1161,19 @@
       </div>
       <div class="footer-links-group">
         <span class="footer-title">Navigation</span>
-        <a href="#projects">Projets</a>
-        <a href="#students">Étudiants</a>
-        <a href="#clients">Entreprises</a>
-        <a href="#dashboard">Dashboard</a>
+        <a href="#projects" data-nav-to="projects">Projets</a>
+        <a href="#students" data-nav-to="students">Étudiants</a>
+        <a href="#clients" data-nav-to="clients">Entreprises</a>
+        <a href="#dashboard" data-nav-to="dashboard">Dashboard</a>
       </div>
       <div class="footer-links-group">
         <span class="footer-title">Accès</span>
-        <button type="button" class="text-link-sm" style="text-align: left;" data-open-modal="login-modal">Connexion</button>
-        <button type="button" class="text-link-sm" style="text-align: left;" data-open-modal="register-modal">Inscription</button>
-        <button type="button" class="text-link-sm" style="text-align: left;" data-open-modal="post-project-modal">Publier un projet</button>
+        <button type="button" class="text-link-sm" style="text-align: left;"
+          data-open-modal="login-modal">Connexion</button>
+        <button type="button" class="text-link-sm" style="text-align: left;"
+          data-open-modal="register-modal">Inscription</button>
+        <button type="button" class="text-link-sm" style="text-align: left;"
+          data-open-modal="post-project-modal">Publier un projet</button>
       </div>
     </div>
   </footer>
@@ -1014,7 +1198,7 @@
             <input type="checkbox" name="remember_me" />
             <span>Se souvenir de moi</span>
           </label>
-          <a href="#" class="text-link-sm">Mot de passe oublié ?</a>
+          <button type="button" class="text-link-sm" data-switch-modal="forgot-password-modal" style="background: none; border: none; font: inherit; color: var(--primary); cursor: pointer; padding: 0;">Mot de passe oublié ?</button>
         </div>
         <button type="submit" class="btn-hero btn-hero-full">Se connecter <span class="btn-hero-arrow">→</span></button>
       </form>
@@ -1029,63 +1213,120 @@
   <div class="modal-overlay" id="register-modal" aria-hidden="true">
     <div class="modal-card glass-card">
       <button type="button" class="modal-close" aria-label="Fermer">&times;</button>
-      <h2>Inscription</h2>
-      <p>Rejoignez la plateforme DevEarn.</p>
-      <form class="modal-form" action="#" method="post">
-        <div class="modal-form-row">
-          <div class="floating-group">
-            <input type="text" id="modal-reg-firstname" name="firstname" placeholder=" " required />
-            <label for="modal-reg-firstname">Prénom</label>
-          </div>
-          <div class="floating-group">
-            <input type="text" id="modal-reg-lastname" name="lastname" placeholder=" " required />
-            <label for="modal-reg-lastname">Nom</label>
-          </div>
+
+      <!-- STEP 1 : ROLE SELECTION -->
+      <div id="register-step-1">
+        <h2>Créer un compte</h2>
+        <p>Choisissez votre profil pour rejoindre DevEarn.</p>
+        <div class="role-selection-grid"
+          style="display: grid; grid-template-columns: 1fr; gap: 16px; margin-top: 24px;">
+          <button type="button" class="btn-role" data-role="Étudiant"
+            style="padding: 20px; border: 1px solid var(--border); border-radius: var(--radius-md); background: rgba(255,255,255,0.05); text-align: left; transition: all 0.2s; cursor: pointer;">
+            <strong style="display: block; font-size: 1.1rem; margin-bottom: 4px; color: var(--text);">Étudiant</strong>
+            <span style="font-size: 0.85rem; color: var(--text-muted);">Trouvez des missions rémunérées et gagnez en
+              expérience.</span>
+          </button>
+          <button type="button" class="btn-role" data-role="Client / Entreprise"
+            style="padding: 20px; border: 1px solid var(--border); border-radius: var(--radius-md); background: rgba(255,255,255,0.05); text-align: left; transition: all 0.2s; cursor: pointer;">
+            <strong
+              style="display: block; font-size: 1.1rem; margin-bottom: 4px; color: var(--text);">Entreprise</strong>
+            <span style="font-size: 0.85rem; color: var(--text-muted);">Publiez des projets et trouvez les meilleurs
+              talents.</span>
+          </button>
+          <button type="button" class="btn-role" data-role="Mentor / Lauréat"
+            style="padding: 20px; border: 1px solid var(--border); border-radius: var(--radius-md); background: rgba(255,255,255,0.05); text-align: left; transition: all 0.2s; cursor: pointer;">
+            <strong style="display: block; font-size: 1.1rem; margin-bottom: 4px; color: var(--text);">Lauréat</strong>
+            <span style="font-size: 0.85rem; color: var(--text-muted);">Proposez des missions ou mentorez des
+              étudiants.</span>
+          </button>
         </div>
-        <div class="floating-group">
-          <input type="email" id="modal-reg-email" name="email" placeholder=" " required />
-          <label for="modal-reg-email">Email</label>
+        <div class="modal-footer-note" style="margin-top: 24px;">
+          <span>Déjà inscrit ?</span>
+          <button type="button" class="text-link-sm" data-switch-modal="login-modal">Se connecter</button>
         </div>
-        <div class="floating-group">
-          <select id="modal-reg-role" name="role" required>
-            <option value="" disabled selected></option>
-            <option>Étudiant</option>
-            <option>Client / Entreprise</option>
-            <option>Mentor / Lauréat</option>
-          </select>
-          <label for="modal-reg-role">Type de profil</label>
-        </div>
-        <div class="floating-group">
-          <input type="password" id="modal-reg-password" name="password" placeholder=" " required />
-          <label for="modal-reg-password">Mot de passe</label>
-        </div>
-        <div class="floating-group">
-          <input type="password" id="modal-reg-password-confirm" name="password_confirm" placeholder=" " required />
-          <label for="modal-reg-password-confirm">Confirmer</label>
-        </div>
-        <label class="check-inline">
-          <input type="checkbox" name="terms" required />
-          <span>J'accepte les conditions d'utilisation.</span>
-        </label>
-        <button type="submit" class="btn-hero btn-hero-full">Créer mon compte <span class="btn-hero-arrow">→</span></button>
-      </form>
-      <div class="modal-footer-note">
-        <span>Déjà inscrit ?</span>
-        <button type="button" class="text-link-sm" data-switch-modal="login-modal">Se connecter</button>
       </div>
+
+      <!-- STEP 2 : FORM -->
+      <div id="register-step-2" style="display: none;">
+        <button type="button" class="text-link-sm" id="btn-back-role" style="margin-bottom: 16px;">← Retour</button>
+        <h2 id="register-form-title">Inscription</h2>
+        <p id="register-form-desc">Complétez vos informations.</p>
+        <form class="modal-form" action="#" method="post" id="registration-form">
+          <input type="hidden" id="modal-reg-role" name="role" value="" />
+
+          <!-- Student / Laureate Fields -->
+          <div id="fields-person">
+            <div class="modal-form-row">
+              <div class="floating-group">
+                <input type="text" id="modal-reg-firstname" name="firstname" placeholder=" " />
+                <label for="modal-reg-firstname">Prénom</label>
+              </div>
+              <div class="floating-group">
+                <input type="text" id="modal-reg-lastname" name="lastname" placeholder=" " />
+                <label for="modal-reg-lastname">Nom</label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Company Fields -->
+          <div id="fields-company" style="display: none;">
+            <div class="floating-group">
+              <input type="text" id="modal-reg-companyname" name="companyname" placeholder=" " />
+              <label for="modal-reg-companyname">Nom de l'entreprise</label>
+            </div>
+            <div style="margin-top: 16px;">
+              <label for="modal-reg-logo"
+                style="display: block; margin-bottom: 8px; font-size: 0.9rem; color: var(--text-soft);">Logo de
+                l'entreprise (Obligatoire)</label>
+              <input type="file" id="modal-reg-logo" name="logo" accept="image/*"
+                style="width: 100%; padding: 10px; background: rgba(255,255,255,0.05); border: 1px dashed var(--border); border-radius: var(--radius-md); color: var(--text);" />
+            </div>
+          </div>
+
+          <!-- Common Fields -->
+          <div class="floating-group" style="margin-top: 16px;">
+            <input type="email" id="modal-reg-email" name="email" placeholder=" " required />
+            <label for="modal-reg-email">Email</label>
+          </div>
+          <div class="floating-group">
+            <input type="password" id="modal-reg-password" name="password" placeholder=" " required />
+            <label for="modal-reg-password">Mot de passe</label>
+          </div>
+          <div class="floating-group">
+            <input type="password" id="modal-reg-password-confirm" name="password_confirm" placeholder=" " required />
+            <label for="modal-reg-password-confirm">Confirmer</label>
+          </div>
+          <label class="check-inline">
+            <input type="checkbox" name="terms" required />
+            <span>J'accepte les conditions d'utilisation.</span>
+          </label>
+          <button type="submit" class="btn-hero btn-hero-full">Créer mon compte <span
+              class="btn-hero-arrow">→</span></button>
+        </form>
+      </div>
+
     </div>
   </div>
 
   <!-- MODAL : PROPOSER UN PROJET -->
   <div class="modal-overlay" id="post-project-modal" aria-hidden="true">
-    <div class="modal-card glass-card">
+    <div class="modal-card glass-card" style="max-width: 600px;">
       <button type="button" class="modal-close" aria-label="Fermer">&times;</button>
-      <h2>Proposer un projet</h2>
-      <p>Décrivez votre besoin pour trouver les meilleurs talents IT du Maroc.</p>
-      <form class="modal-form" action="#" method="post">
+      <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 8px;">
+        <div style="width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, var(--primary), #00b87c); display: flex; align-items: center; justify-content: center; font-family: monospace; font-weight: 800; color: #fff; flex-shrink: 0;">&lt;/&gt;</div>
+        <div>
+          <h2 style="margin: 0;">Déposer une mission</h2>
+          <p style="margin: 2px 0 0; font-size: 0.82rem; color: var(--text-muted);">Rémunérée · Encadrée · Résultat garanti</p>
+        </div>
+      </div>
+      <p style="font-size: 0.88rem; color: var(--text-soft); margin-bottom: 20px; padding: 12px; background: rgba(0,223,154,0.04); border-radius: var(--radius-md); border: 1px solid rgba(0,223,154,0.12);">
+        Décrivez votre besoin technique pour être mis en relation avec les meilleurs talents IT du Maroc.
+        <strong style="color: var(--primary);">Connexion obligatoire.</strong>
+      </p>
+      <form class="modal-form" action="#" method="post" id="post-project-form">
         <div class="floating-group">
           <input type="text" id="modal-project-title" name="title" placeholder=" " required />
-          <label for="modal-project-title">Titre du projet</label>
+          <label for="modal-project-title">Titre du projet / de la mission</label>
         </div>
         <div class="modal-form-row">
           <div class="floating-group">
@@ -1101,24 +1342,357 @@
           </div>
           <div class="floating-group">
             <input type="text" id="modal-project-budget" name="budget" placeholder=" " required />
-            <label for="modal-project-budget">Budget (MAD)</label>
+            <label for="modal-project-budget">Budget proposé (ex: 5000 MAD)</label>
           </div>
         </div>
         <div class="floating-group">
           <textarea id="modal-project-desc" name="description" rows="4" placeholder=" " required></textarea>
-          <label for="modal-project-desc">Description de la mission</label>
+          <label for="modal-project-desc">Description détaillée de la mission</label>
         </div>
         <div class="floating-group">
           <input type="text" id="modal-project-skills" name="skills" placeholder=" " required />
-          <label for="modal-project-skills">Compétences requises (React, Node, etc.)</label>
+          <label for="modal-project-skills">Compétences requises (React, Python, Figma…)</label>
         </div>
-        <button type="submit" class="btn-hero btn-hero-full">Publier le projet <span class="btn-hero-arrow">→</span></button>
+        <button type="submit" class="btn-hero btn-hero-full" id="btn-post-project-submit">
+          Publier la mission <span class="btn-hero-arrow">→</span>
+        </button>
       </form>
     </div>
   </div>
 
+  <!-- MODAL : PROFIL -->
+  <div class="modal-overlay" id="profile-modal" aria-hidden="true">
+    <div class="modal-card glass-card">
+      <button type="button" class="modal-close" aria-label="Fermer">&times;</button>
+      <h2>Mon Profil</h2>
+      <p>Mettez à jour vos informations publiques.</p>
+      <form class="modal-form" action="#" method="post" id="profile-form">
+        <div style="text-align: center; margin-bottom: 24px;">
+          <div id="profile-avatar-preview"
+            style="width: 80px; height: 80px; border-radius: 50%; background: var(--border); margin: 0 auto 12px; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+            <span style="color: var(--text-muted); font-size: 0.8rem;">Aucune</span>
+          </div>
+          <input type="file" id="modal-profile-avatar" name="avatar" accept="image/*" style="display: none;" />
+          <button type="button" class="btn btn-outline btn-sm"
+            onclick="document.getElementById('modal-profile-avatar').click()">Changer l'image</button>
+        </div>
+        <div class="floating-group" id="profile-company-group">
+          <input type="text" id="modal-profile-company" name="company_name" placeholder=" " />
+          <label for="modal-profile-company">Nom de l'entreprise (si applicable)</label>
+        </div>
+        <div class="floating-group">
+          <textarea id="modal-profile-bio" name="bio" rows="3" placeholder=" "></textarea>
+          <label for="modal-profile-bio">Biographie / Présentation</label>
+        </div>
+
+        <div class="modal-form-row">
+          <div class="floating-group">
+            <input type="tel" id="modal-profile-phone" name="phone" placeholder=" " />
+            <label for="modal-profile-phone">Téléphone</label>
+          </div>
+          <div class="floating-group">
+            <input type="url" id="modal-profile-website" name="website_url" placeholder=" " />
+            <label for="modal-profile-website">Site Web / Portfolio</label>
+          </div>
+        </div>
+        
+        <div class="modal-form-row" id="profile-social-links">
+          <div class="floating-group">
+            <input type="url" id="modal-profile-github" name="github_url" placeholder=" " />
+            <label for="modal-profile-github">Lien GitHub</label>
+          </div>
+          <div class="floating-group">
+            <input type="url" id="modal-profile-linkedin" name="linkedin_url" placeholder=" " />
+            <label for="modal-profile-linkedin">Lien LinkedIn</label>
+          </div>
+        </div>
+
+        <div id="profile-student-fields">
+          <div class="floating-group" style="margin-bottom: 24px;" id="profile-specialty-group">
+            <input type="text" id="modal-profile-specialty" name="specialty" placeholder=" " />
+            <label for="modal-profile-specialty">Spécialité Principale (ex: Ingénieur IA, Développeur Backend)</label>
+          </div>
+          
+          <div class="floating-group" style="margin-bottom: 24px;">
+            <input type="text" id="modal-profile-skills" name="skills_tags" placeholder=" " />
+            <label for="modal-profile-skills">Compétences clés (ex: React, Python, UI/UX)</label>
+            <small style="display:block; margin-top:6px; font-size:0.8rem; color:var(--primary);">Séparez vos
+              compétences par des virgules pour un meilleur matching.</small>
+          </div>
+          <div class="floating-group">
+            <input type="text" id="modal-profile-education" name="education_level" placeholder=" " />
+            <label for="modal-profile-education">Niveau d'études (ex: Bac+5)</label>
+          </div>
+          <div class="floating-group">
+            <input type="text" id="modal-profile-institution" name="institution" placeholder=" " />
+            <label for="modal-profile-institution">Établissement / École</label>
+          </div>
+          <div class="floating-group" style="margin-bottom: 24px;">
+            <input type="url" id="modal-profile-cv" name="cv_url" placeholder=" " />
+            <label for="modal-profile-cv">Lien vers votre CV (Google Drive, PDF)</label>
+          </div>
+        </div>
+
+        <button type="submit" class="btn-hero btn-hero-full" id="btn-save-profile">Enregistrer les modifications <span
+            class="btn-hero-arrow">→</span></button>
+      </form>
+    </div>
+  </div>
+
+  <!-- MODAL : VÉRIFICATION EMAIL -->
+  <div class="modal-overlay" id="verify-email-modal" aria-hidden="true">
+    <div class="modal-card glass-card">
+      <button type="button" class="modal-close" aria-label="Fermer">&times;</button>
+      <h2>Vérification Email</h2>
+      <p>Entrez le code à 6 chiffres envoyé à votre adresse email.</p>
+      <form class="modal-form" action="#" method="post" id="verify-email-form">
+        <input type="hidden" id="verify-email-input" name="email" value="" />
+        <div class="floating-group">
+          <input type="text" id="verify-code" name="code" placeholder=" " required maxlength="6" style="text-align: center; letter-spacing: 4px; font-size: 1.5rem;" />
+          <label for="verify-code">Code de vérification</label>
+        </div>
+        <button type="submit" class="btn-hero btn-hero-full">Vérifier mon compte <span class="btn-hero-arrow">→</span></button>
+      </form>
+    </div>
+  </div>
+
+  <!-- MODAL : MOT DE PASSE OUBLIÉ -->
+  <div class="modal-overlay" id="forgot-password-modal" aria-hidden="true">
+    <div class="modal-card glass-card">
+      <button type="button" class="modal-close" aria-label="Fermer">&times;</button>
+      <h2>Mot de passe oublié</h2>
+      <p>Entrez votre adresse email pour recevoir un code de réinitialisation.</p>
+      <form class="modal-form" action="#" method="post" id="forgot-password-form">
+        <div class="floating-group">
+          <input type="email" id="forgot-password-email" name="email" placeholder=" " required />
+          <label for="forgot-password-email">Email</label>
+        </div>
+        <button type="submit" class="btn-hero btn-hero-full">Envoyer le code <span class="btn-hero-arrow">&rarr;</span></button>
+      </form>
+      <div class="modal-footer-note">
+        <span>Retour à la</span>
+        <button type="button" class="text-link-sm" data-switch-modal="login-modal">Connexion</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL : RÉINITIALISATION DU MOT DE PASSE -->
+  <div class="modal-overlay" id="reset-password-modal" aria-hidden="true">
+    <div class="modal-card glass-card">
+      <button type="button" class="modal-close" aria-label="Fermer">&times;</button>
+      <h2>Réinitialiser le mot de passe</h2>
+      <p>Saisissez le code reçu par email ainsi que votre nouveau mot de passe.</p>
+      <form class="modal-form" action="#" method="post" id="reset-password-form">
+        <input type="hidden" id="reset-password-email" name="email" value="" />
+        <div class="floating-group">
+          <input type="text" id="reset-password-code" name="code" placeholder=" " required maxlength="6" style="text-align: center; letter-spacing: 4px; font-size: 1.5rem;" />
+          <label for="reset-password-code">Code de réinitialisation (6 chiffres)</label>
+        </div>
+        <div class="floating-group">
+          <input type="password" id="reset-password-new" name="new_password" placeholder=" " required />
+          <label for="reset-password-new">Nouveau mot de passe</label>
+        </div>
+        <div class="floating-group">
+          <input type="password" id="reset-password-confirm" name="confirm_password" placeholder=" " required />
+          <label for="reset-password-confirm">Confirmer le mot de passe</label>
+        </div>
+        <button type="submit" class="btn-hero btn-hero-full">Réinitialiser le mot de passe <span class="btn-hero-arrow">&rarr;</span></button>
+      </form>
+      <div class="modal-footer-note">
+        <span>Retour à la</span>
+        <button type="button" class="text-link-sm" data-switch-modal="login-modal">Connexion</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL : PROFIL ÉTUDIANT PUBLIC -->
+  <div class="modal-overlay" id="student-public-profile-modal" aria-hidden="true">
+    <div class="modal-card glass-card" style="max-width: 600px;">
+      <button type="button" class="modal-close" aria-label="Fermer">&times;</button>
+      <div id="student-public-profile-content" style="text-align: center;">
+        <div id="spp-avatar" style="width: 100px; height: 100px; border-radius: 50%; background: var(--border); margin: 0 auto 16px; overflow: hidden; display: flex; align-items: center; justify-content: center; font-size: 2rem; color: var(--primary);">
+        </div>
+        <h2 id="spp-name" style="margin-bottom: 4px;">Nom de l'étudiant</h2>
+        <p id="spp-specialty" style="color: var(--primary); font-weight: 500; margin-bottom: 12px;"></p>
+        <div style="display: flex; gap: 8px; justify-content: center; margin-bottom: 24px;">
+          <span class="badge-tag highlight" id="spp-xp">0 XP</span>
+          <span class="badge-tag" id="spp-education"></span>
+        </div>
+        
+        <div style="text-align: left; margin-bottom: 24px; padding: 16px; background: rgba(255,255,255,0.02); border-radius: var(--radius-md); border: 1px solid var(--border);">
+          <h4 style="margin-bottom: 8px; font-size: 0.9rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px;">Biographie</h4>
+          <p id="spp-bio" style="font-size: 0.95rem; line-height: 1.5; color: var(--text-soft);">Aucune biographie fournie.</p>
+        </div>
+
+        <div style="text-align: left; margin-bottom: 24px;">
+          <h4 style="margin-bottom: 8px; font-size: 0.9rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px;">Compétences</h4>
+          <div id="spp-skills" style="display: flex; flex-wrap: wrap; gap: 8px;">
+            <!-- Skills go here -->
+          </div>
+        </div>
+
+        <div style="text-align: left; margin-bottom: 24px;">
+          <h4 style="margin-bottom: 8px; font-size: 0.9rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px;">Projets Réalisés</h4>
+          <div id="spp-completed-projects" style="display: flex; flex-direction: column; gap: 10px;">
+            <!-- Completed projects go here -->
+          </div>
+        </div>
+
+        <div style="text-align: left; margin-bottom: 24px;">
+          <h4 style="margin-bottom: 8px; font-size: 0.9rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px;">Liens Utiles</h4>
+          <div id="spp-links" style="display: flex; flex-direction: column; gap: 8px;">
+            <a href="#" target="_blank" id="spp-cv" class="text-link-sm" style="display: none; align-items: center; gap: 8px;">
+              <img src="./assets/icons/cv.svg" style="height: 16px; width: 16px; filter: invert(1);" alt="" />
+              Voir le CV
+            </a>
+            <a href="#" target="_blank" id="spp-github" class="text-link-sm" style="display: none; align-items: center; gap: 8px;">
+              <img src="./assets/icons/github.svg" style="height: 16px; width: 16px; filter: invert(1);" alt="" />
+              GitHub
+            </a>
+            <a href="#" target="_blank" id="spp-linkedin" class="text-link-sm" style="display: none; align-items: center; gap: 8px;">
+              <img src="./assets/icons/linkedin .svg" style="height: 16px; width: 16px; filter: invert(1);" alt="" />
+              LinkedIn
+            </a>
+            <a href="#" target="_blank" id="spp-website" class="text-link-sm" style="display: none; align-items: center; gap: 8px;">
+              <img src="./assets/icons/portfolio-svgrepo-com.svg" style="height: 16px; width: 16px; filter: invert(1);" alt="" />
+              Site Web / Portfolio
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL : CANDIDATURES D'UN PROJET -->
+  <div class="modal-overlay" id="project-applications-modal" aria-hidden="true">
+    <div class="modal-card glass-card" style="max-width: 850px; width: 95%; padding: 0; display: flex; flex-direction: column; height: 600px; max-height: 90vh;">
+      <!-- Modal Header -->
+      <div style="padding: 20px 28px; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; background: rgba(0,0,0,0.2);">
+        <div>
+          <h3 id="pam-project-title" style="margin: 0; font-size: 1.30rem; font-weight: 800; color: var(--text);">Candidatures du Projet</h3>
+          <p style="margin: 4px 0 0; font-size: 0.85rem; color: var(--text-soft);">Découvrez et gérez les étudiants qui ont postulé.</p>
+        </div>
+        <button type="button" class="modal-close" aria-label="Fermer" style="position: static; padding: 4px; font-size: 1.5rem; background:none; border:none; color:var(--text); cursor:pointer;">&times;</button>
+      </div>
+
+      <!-- Modal Body -->
+      <div style="flex: 1; overflow-y: auto; padding: 24px; background: rgba(0,0,0,0.05);">
+        <div style="overflow-x: auto;">
+          <table class="premium-table" style="width: 100%;">
+            <thead>
+              <tr>
+                <th>Étudiant</th>
+                <th>Email</th>
+                <th>Date</th>
+                <th>Motivation</th>
+                <th>Statut</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="pam-tbody">
+              <!-- Injected by JS -->
+            </tbody>
+          </table>
+          <div id="pam-empty-state" style="text-align: center; padding: 60px 0; color: var(--text-muted); display: none;">
+            <div style="margin-bottom: 12px;">
+              <img src="./assets/icons/messages-2-svgrepo-com.svg" style="height: 40px; width: 40px; opacity: 0.5; filter: invert(1);" alt="" />
+            </div>
+            Aucune candidature reçue pour le moment.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL : POSTULER À UN PROJET (PREMIUM) -->
+  <div class="modal-overlay" id="apply-project-modal" aria-hidden="true">
+    <div class="modal-card glass-card" style="max-width: 550px; width: 90%;">
+      <button type="button" class="modal-close" aria-label="Fermer" style="background:none; border:none; color:var(--text); font-size:1.5rem; cursor:pointer;">&times;</button>
+      <h2>Postuler au projet</h2>
+      <p style="color:var(--text-soft); font-size:0.9rem; margin-bottom:20px;">Décrivez votre motivation pour maximiser vos chances d'être sélectionné par l'entreprise.</p>
+      
+      <form class="modal-form" id="apply-project-form">
+        <input type="hidden" id="apply-project-id" name="project_id" value="" />
+        
+        <div class="floating-group" style="margin-bottom:20px;">
+          <textarea id="apply-project-motivation" name="motivation" rows="5" placeholder=" " required style="width:100%; min-height:120px;"></textarea>
+          <label for="apply-project-motivation">Votre message de motivation / compétences utiles</label>
+        </div>
+        
+        <div class="floating-group" style="margin-bottom:24px;">
+          <select id="apply-project-stage-opt" name="stage_option" required style="width:100%;">
+            <option value="" disabled selected></option>
+            <option value="Oui, c'est mon objectif principal !">Oui, c'est mon objectif principal !</option>
+            <option value="Pourquoi pas, si l'opportunité se présente">Pourquoi pas, si l'opportunité se présente</option>
+            <option value="Non, je cherche uniquement un projet freelance">Non, je cherche uniquement un projet freelance</option>
+          </select>
+          <label for="apply-project-stage-opt">Espérez-vous une opportunité de stage après la mission ?</label>
+        </div>
+        
+        <button type="submit" class="btn-hero btn-hero-full">Confirmer ma candidature <span class="btn-hero-arrow">→</span></button>
+      </form>
+    </div>
+  </div>
+
+  <!-- MODAL : MESSAGERIE / INBOX -->
+  <div class="modal-overlay" id="inbox-modal" aria-hidden="true">
+    <div class="modal-card glass-card" style="max-width: 600px; width: 95%; padding: 0; display: flex; flex-direction: column; height: 550px; max-height: 85vh;">
+      <!-- Modal Header -->
+      <div style="padding: 20px 24px; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; background: rgba(0,0,0,0.2);">
+        <div>
+          <h3 style="margin: 0; font-size: 1.3rem; font-weight: 800; color: var(--text);">Messagerie</h3>
+          <p style="margin: 4px 0 0; font-size: 0.85rem; color: var(--text-soft);">Retrouvez toutes vos conversations actives avec les entreprises ou talents.</p>
+        </div>
+        <button type="button" class="modal-close" aria-label="Fermer" style="position: static; padding: 4px; font-size: 1.5rem; background:none; border:none; color:var(--text); cursor:pointer;">&times;</button>
+      </div>
+
+      <!-- Modal Body (List of threads) -->
+      <div style="flex: 1; overflow-y: auto; padding: 16px; background: rgba(0,0,0,0.05);" id="inbox-threads-list">
+        <!-- JS populated thread items -->
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL : CHAT / MESSAGERIE -->
+  <div class="modal-overlay" id="chat-modal" aria-hidden="true">
+    <div class="modal-card glass-card" style="max-width: 500px; padding: 0; display: flex; flex-direction: column; height: 600px; max-height: 90vh;">
+      
+      <!-- Chat Header -->
+      <div style="padding: 16px 24px; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; background: rgba(0,0,0,0.2);">
+        <div>
+          <h3 id="chat-other-user-name" style="margin: 0; font-size: 1.2rem;">Discussion</h3>
+          <p id="chat-project-title" style="margin: 4px 0 0; font-size: 0.85rem; color: var(--text-muted);"></p>
+        </div>
+        <button type="button" class="modal-close" aria-label="Fermer" style="position: static; padding: 4px;">&times;</button>
+      </div>
+
+      <!-- Chat Messages Area -->
+      <div id="chat-messages" style="flex: 1; overflow-y: auto; padding: 24px; display: flex; flex-direction: column; gap: 16px; background: rgba(0,0,0,0.1);">
+        <!-- Messages will be injected here -->
+      </div>
+
+      <!-- Chat Input Area -->
+      <div style="padding: 16px 24px; border-top: 1px solid var(--border); background: rgba(0,0,0,0.2);">
+        <form id="chat-form" style="display: flex; gap: 12px; align-items: center;">
+          <input type="text" id="chat-input" placeholder="Écrivez votre message..." style="flex: 1; padding: 12px 16px; border-radius: 20px; border: 1px solid var(--border); background: rgba(255,255,255,0.05); color: var(--text); outline: none;" autocomplete="off" />
+          <button type="submit" class="btn btn-primary" style="border-radius: 20px; padding: 12px 20px;">Envoyer</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="./js/api.js"></script>
   <script src="./js/main.js"></script>
   <script src="./js/home.js"></script>
+  <script src="./js/auth.js"></script>
+  <script src="./js/forms.js"></script>
+  <script src="./js/session.js"></script>
+  <script src="./js/chat-profile.js"></script>
+  <script src="./js/client-dashboard.js"></script>
+  <script src="./js/student-hub.js"></script>
+  <script src="./js/laureate-hub.js"></script>
+  <script src="./js/applications.js"></script>
+  <script src="./js/projects.js"></script>
 </body>
 
 </html>

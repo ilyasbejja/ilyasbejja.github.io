@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr" data-theme="dark">
 <head>
-  <script>window.location.replace('./index.html#login');</script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>DevEarn — Connexion</title>
@@ -35,8 +34,8 @@
         <button class="theme-toggle" type="button" aria-label="Basculer le thème">
           <span class="theme-toggle-icon">◐</span>
         </button>
-        <button type="button" class="btn btn-ghost" data-open-modal="login-modal">Connexion</button>
-        <button type="button" class="btn btn-primary" data-open-modal="register-modal">Inscription</button>
+        <a href="./login.html" class="btn btn-ghost" id="nav-login-btn">Connexion</a>
+        <a href="./register.html" class="btn btn-primary" id="nav-register-btn">Inscription</a>
       </div>
     </div>
   </header>
@@ -60,10 +59,11 @@
                 <input type="checkbox" name="remember_me" />
                 <span>Se souvenir de moi</span>
               </label>
-              <a href="#" class="text-link-sm">Oublié ?</a>
+              <a href="./forgot-password.html" class="text-link-sm">Oublié ?</a>
             </div>
             <button type="submit" class="btn-hero btn-hero-full">Se connecter <span class="btn-hero-arrow">→</span></button>
           </form>
+          <div id="auth-message" class="auth-message"></div>
           <div class="auth-footer-note">
             <span>Pas de compte ?</span>
             <a href="./register.html" class="text-link-sm">Créer un compte</a>
@@ -91,12 +91,32 @@
       </div>
       <div class="footer-links-group">
         <span class="footer-title">Accès</span>
-        <button type="button" class="text-link-sm" data-open-modal="login-modal">Connexion</button>
-        <button type="button" class="text-link-sm" data-open-modal="register-modal">Inscription</button>
+        <a href="./login.html" class="text-link-sm" style="display: block; margin-bottom: 8px;">Connexion</a>
+        <a href="./register.html" class="text-link-sm" style="display: block; margin-bottom: 8px;">Inscription</a>
         <a href="./post-project.html">Publier un projet</a>
       </div>
     </div>
   </footer>
-  <script src="./js/main.js"></script>
+  <script src="./js/auth-api.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const form = document.querySelector('.auth-form');
+      form.addEventListener('submit', handleLoginSubmit);
+    });
+
+    function handleLoginSubmit(event) {
+      event.preventDefault();
+
+      const email = document.getElementById('login-email').value;
+      const password = document.getElementById('login-password').value;
+
+      if (!email || !password) {
+        showNotification('Veuillez entrer vos identifiants', 'error');
+        return;
+      }
+
+      loginUser(email, password);
+    }
+  </script>
 </body>
 </html>

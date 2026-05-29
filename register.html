@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr" data-theme="dark">
 <head>
-  <script>window.location.replace('./index.html#register');</script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>DevEarn — Inscription</title>
@@ -35,8 +34,8 @@
         <button class="theme-toggle" type="button" aria-label="Basculer le thème">
           <span class="theme-toggle-icon">◐</span>
         </button>
-        <button type="button" class="btn btn-ghost" data-open-modal="login-modal">Connexion</button>
-        <button type="button" class="btn btn-primary" data-open-modal="register-modal">Inscription</button>
+        <a href="./login.html" class="btn btn-ghost" id="nav-login-btn">Connexion</a>
+        <a href="./register.html" class="btn btn-primary" id="nav-register-btn">Inscription</a>
       </div>
     </div>
   </header>
@@ -81,8 +80,11 @@
               <input type="checkbox" name="terms" required />
               <span>J'accepte les conditions d'utilisation.</span>
             </label>
-            <button type="submit" class="btn-hero btn-hero-full">Créer mon compte <span class="btn-hero-arrow">→</span></button>
+            <button type="submit" class="btn-hero btn-hero-full" id="submitBtn">
+              Créer mon compte <span class="btn-hero-arrow">→</span>
+            </button>
           </form>
+          <div id="auth-message" class="auth-message"></div>
           <div class="auth-footer-note">
             <span>Déjà inscrit ?</span>
             <a href="./login.html" class="text-link-sm">Se connecter</a>
@@ -110,12 +112,50 @@
       </div>
       <div class="footer-links-group">
         <span class="footer-title">Accès</span>
-        <button type="button" class="text-link-sm" data-open-modal="login-modal">Connexion</button>
-        <button type="button" class="text-link-sm" data-open-modal="register-modal">Inscription</button>
+        <a href="./login.html" class="text-link-sm" style="display: block; margin-bottom: 8px;">Connexion</a>
+        <a href="./register.html" class="text-link-sm" style="display: block; margin-bottom: 8px;">Inscription</a>
         <a href="./post-project.html">Publier un projet</a>
       </div>
     </div>
   </footer>
-  <script src="./js/main.js"></script>
+  <script src="./js/auth-api.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const form = document.querySelector('.auth-form');
+      form.addEventListener('submit', handleRegisterSubmit);
+    });
+
+    function handleRegisterSubmit(event) {
+      event.preventDefault();
+
+      const firstName = document.getElementById('reg-firstname').value;
+      const lastName = document.getElementById('reg-lastname').value;
+      const email = document.getElementById('reg-email').value;
+      const role = document.getElementById('reg-role').value;
+      const password = document.getElementById('reg-password').value;
+      const passwordConfirm = document.getElementById('reg-password-confirm').value;
+      const terms = document.querySelector('input[name="terms"]:checked');
+
+      if (!firstName || !lastName || !email || !role || !password || !passwordConfirm) {
+        showNotification('Veuillez remplir tous les champs', 'error');
+        return;
+      }
+
+      if (password !== passwordConfirm) {
+        showNotification('Les mots de passe ne correspondent pas', 'error');
+        return;
+      }
+
+      if (!terms) {
+        showNotification('Vous devez accepter les conditions d\'utilisation', 'error');
+        return;
+      }
+
+      const fullName = `${firstName} ${lastName}`;
+      const roleValue = role === 'Étudiant' ? 'student' : 'client';
+
+      registerUser(fullName, email, password, roleValue);
+    }
+  </script>
 </body>
 </html>
