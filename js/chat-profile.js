@@ -38,7 +38,7 @@
         const avatarEl = document.getElementById("spp-avatar");
         if (profile.profile_picture) {
             // Adjust the base URL for images
-            const baseUrl = window.api.getBaseUrl ? window.api.getBaseUrl() : (window.api.API_BASE_URL || "http://127.0.0.1:8001");
+            const baseUrl = window.api.getBaseUrl ? window.api.getBaseUrl() : (window.api.API_BASE_URL || "https://devearn-backend.onrender.com");
             avatarEl.innerHTML = `<img src="${baseUrl}${profile.profile_picture}" style="width: 100%; height: 100%; object-fit: cover;" alt="${profile.full_name}" />`;
         } else {
             avatarEl.innerHTML = profile.full_name.substring(0, 2).toUpperCase();

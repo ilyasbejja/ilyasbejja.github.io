@@ -117,7 +117,7 @@
     // Avatar
     const avatar = document.createElement("div");
     if (user.profile_picture) {
-        avatar.innerHTML = `<img src="${window.api.API_BASE_URL || 'http://127.0.0.1:8000'}${user.profile_picture}" style="width:100%; height:100%; object-fit:cover; border-radius:50%;" />`;
+        avatar.innerHTML = `<img src="${window.api.API_BASE_URL || 'https://devearn-backend.onrender.com'}${user.profile_picture}" style="width:100%; height:100%; object-fit:cover; border-radius:50%;" />`;
     } else {
         avatar.textContent = user.full_name.substring(0, 2).toUpperCase();
     }
@@ -230,7 +230,7 @@
               // Avatar
               let avatarHtml = "";
               if (t.other_user_avatar) {
-                  avatarHtml = `<img src="${window.api.API_BASE_URL || 'http://127.0.0.1:8001'}${t.other_user_avatar}" style="width:100%; height:100%; object-fit:cover; border-radius:50%;" />`;
+                  avatarHtml = `<img src="${window.api.API_BASE_URL || 'https://devearn-backend.onrender.com'}${t.other_user_avatar}" style="width:100%; height:100%; object-fit:cover; border-radius:50%;" />`;
               } else {
                   avatarHtml = t.other_user_name.substring(0, 2).toUpperCase();
               }

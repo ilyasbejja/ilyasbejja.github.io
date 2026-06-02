@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function resolveMediaUrl(path) {
     if (!path) return null;
     if (path.startsWith("http://") || path.startsWith("https://")) return path;
-    const base = window.api?.API_BASE_URL || "http://127.0.0.1:8000";
+    const base = window.api?.API_BASE_URL || "https://devearn-backend.onrender.com";
     return `${base}${path}`;
   }
 

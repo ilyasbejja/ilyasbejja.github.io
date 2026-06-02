@@ -67,7 +67,7 @@
     // Avatar HTML
     let avatarHtml = "";
     if (user.profile_picture) {
-      const baseUrl = window.api.API_BASE_URL || "http://127.0.0.1:8001";
+      const baseUrl = window.api.API_BASE_URL || "https://devearn-backend.onrender.com";
       avatarHtml = `<img src="${baseUrl}${user.profile_picture}" style="width:100%; height:100%; object-fit:cover; border-radius:50%;" />`;
     } else {
       avatarHtml = `<span style="font-size: 1.8rem; font-weight: 800; color: #030305;">${user.full_name.substring(0, 2).toUpperCase()}</span>`;

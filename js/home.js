@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const tr = document.createElement("tr");
         
         const avatar = student.profile_picture 
-            ? `<img src="${window.api.API_BASE_URL || 'http://127.0.0.1:8000'}${student.profile_picture}" style="width:32px; height:32px; border-radius:50%; object-fit:cover;" />`
+            ? `<img src="${window.api.API_BASE_URL || 'https://devearn-backend.onrender.com'}${student.profile_picture}" style="width:32px; height:32px; border-radius:50%; object-fit:cover;" />`
             : `<div class="student-row-avatar">${student.full_name.substring(0,2).toUpperCase()}</div>`;
             
         const skills = student.skills_tags ? student.skills_tags.split(',').slice(0,2).map(s => `<span class="badge-tag">${s.trim()}</span>`).join('') : '<span class="badge-tag">Nouveau</span>';

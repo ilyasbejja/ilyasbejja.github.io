@@ -3,7 +3,7 @@
  * Handles all communication with the backend authentication endpoints
  */
 
-const API_BASE = (window.api && window.api.API_BASE_URL) ? `${window.api.API_BASE_URL}/auth` : 'http://127.0.0.1:8001/auth';
+const API_BASE = (window.api && window.api.API_BASE_URL) ? `${window.api.API_BASE_URL}/auth` : 'https://devearn-backend.onrender.com/auth';
 
 /**
  * Show notification message
