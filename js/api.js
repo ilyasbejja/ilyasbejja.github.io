@@ -3,7 +3,7 @@
  * Centralized API calls for the frontend
  */
 
-const API_BASE_URL = "http://127.0.0.1:8001";
+const API_BASE_URL = "http://127.0.0.1:8000";
 
 const api = {
   // Helpers for tokens
@@ -35,7 +35,9 @@ const api = {
       } catch (e) {
         // Not JSON
       }
-      throw new Error(errorMsg);
+      const err = new Error(errorMsg);
+      err.status = response.status;
+      throw err;
     }
 
     return response.json();

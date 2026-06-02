@@ -125,9 +125,9 @@
 
       } catch (err) {
         if (window.showToast) {
-          window.showToast("Erreur: " + err.message, "error");
+          window.showToast("Erreur : " + err.message, "error");
         } else {
-          alert("Erreur: " + err.message);
+          alert("Erreur : " + err.message);
         }
       } finally {
         if (submitBtn) {

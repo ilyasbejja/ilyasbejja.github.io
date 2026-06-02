@@ -204,10 +204,18 @@
       if (!confirm(`Voulez-vous marquer cette candidature comme ${newStatus} ?`)) return;
       try {
           await window.api.fetch(`/applications/${appId}/status?new_status=${newStatus}`, { method: 'PATCH' });
-          alert("Statut mis à jour !");
+          if (window.showToast) {
+              window.showToast("Statut mis à jour !", "success", 4000);
+          } else {
+              alert("Statut mis à jour !");
+          }
           window.viewProjectApplications(projectId, projectTitle); // refresh list
       } catch (err) {
-          alert("Erreur : " + err.message);
+          if (window.showToast) {
+              window.showToast("Erreur : " + err.message, "error", 5000);
+          } else {
+              alert("Erreur : " + err.message);
+          }
       }
   }
 

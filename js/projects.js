@@ -56,6 +56,41 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  function resolveMediaUrl(path) {
+    if (!path) return null;
+    if (path.startsWith("http://") || path.startsWith("https://")) return path;
+    const base = window.api?.API_BASE_URL || "http://127.0.0.1:8000";
+    return `${base}${path}`;
+  }
+
+  function escapeHtml(text) {
+    const div = document.createElement("div");
+    div.textContent = text ?? "";
+    return div.innerHTML;
+  }
+
+  function formatBudget(budget) {
+    const raw = String(budget ?? "").trim();
+    if (!raw) return "Budget sur devis";
+    if (/\bmad\b/i.test(raw)) return raw;
+    const digits = raw.replace(/[^\d.,]/g, "").replace(",", ".");
+    const num = parseFloat(digits);
+    if (!Number.isNaN(num) && num >= 1000) {
+      if (num >= 1_000_000) {
+        const m = num / 1_000_000;
+        return `${m % 1 === 0 ? m.toFixed(0) : m.toFixed(1)}M MAD`;
+      }
+      return `${Math.round(num / 1000)}k MAD`;
+    }
+    return `${raw} MAD`;
+  }
+
+  function formatStatusLabel(status) {
+    const s = String(status || "Ouvert").trim();
+    if (!s) return "Ouvert";
+    return s.charAt(0).toUpperCase() + s.slice(1).toLowerCase();
+  }
+
   function renderRealProjects(projects, studentAppsMap = {}) {
     const grid = document.getElementById("projects-grid");
     if (!grid) return;
@@ -69,9 +104,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     projects.forEach(p => {
         const article = document.createElement("article");
-        article.className = "project-card glass-card";
-        
-        // Map category string to data-category for filtering
+        article.className = "project-card project-card--premium";
+
         let catValue = "web";
         const catStr = p.category.toLowerCase();
         if (catStr.includes("data") || catStr.includes("ia")) catValue = "data";
@@ -86,83 +120,88 @@ document.addEventListener("DOMContentLoaded", () => {
         article.dataset.category = catValue;
         article.dataset.level = levelValue;
 
-        // Determine action button html
         const user = window.currentUser;
         let actionBtnHtml = "";
-        
+
         if (user) {
             const isStudent = user.role.toLowerCase().includes("étudiant") || user.role.toLowerCase().includes("student");
             if (isStudent) {
                 const appliedStatus = studentAppsMap[p.id];
                 if (appliedStatus) {
-                    let statusColor = "var(--text-soft)";
-                    let statusBg = "rgba(255, 255, 255, 0.05)";
-                    if (appliedStatus.toLowerCase().includes("attente")) {
-                      statusColor = "#ffb833";
-                      statusBg = "rgba(255, 184, 51, 0.15)";
-                    } else if (appliedStatus.toLowerCase().includes("accept")) {
-                      statusColor = "var(--primary)";
-                      statusBg = "rgba(0, 223, 154, 0.15)";
-                    } else if (appliedStatus.toLowerCase().includes("refus")) {
-                      statusColor = "var(--danger)";
-                      statusBg = "rgba(255, 75, 107, 0.15)";
-                    }
-                    actionBtnHtml = `<span style="display: inline-block; padding: 6px 12px; border-radius: var(--radius-md); font-size: 0.8rem; font-weight: 700; color: ${statusColor}; background: ${statusBg}; border: 1px solid ${statusColor}40;">Déjà postulé (${appliedStatus})</span>`;
+                    let statusClass = "project-status-chip--neutral";
+                    if (appliedStatus.toLowerCase().includes("attente")) statusClass = "project-status-chip--pending";
+                    else if (appliedStatus.toLowerCase().includes("accept")) statusClass = "project-status-chip--accepted";
+                    else if (appliedStatus.toLowerCase().includes("refus")) statusClass = "project-status-chip--refused";
+                    actionBtnHtml = `<span class="project-status-chip ${statusClass}">Déjà postulé · ${escapeHtml(appliedStatus)}</span>`;
                 } else {
-                    actionBtnHtml = `<button type="button" class="btn btn-primary btn-sm btn-apply-now" data-project-id="${p.id}">Postuler →</button>`;
+                    actionBtnHtml = `<button type="button" class="btn btn-project-apply btn-apply-now" data-project-id="${p.id}">Postuler →</button>`;
                 }
             } else {
-                // For client / mentor users
                 if (p.created_by_user_id === user.id) {
-                    actionBtnHtml = `<span style="font-size: 0.8rem; color: var(--primary); font-weight: 600; padding: 4px 8px; background: rgba(0, 223, 154, 0.05); border: 1px solid var(--primary)30; border-radius: 4px;">Mon projet</span>`;
+                    actionBtnHtml = `<span class="project-status-chip project-status-chip--owned">Mon projet</span>`;
                 } else {
-                    actionBtnHtml = `<span style="font-size: 0.8rem; color: var(--text-muted); font-weight: 500;">Par : ${p.creator_name || 'Inconnu'}</span>`;
+                    actionBtnHtml = `<span class="project-status-chip project-status-chip--neutral">${escapeHtml(p.creator_name || "Entreprise")}</span>`;
                 }
             }
         } else {
-            actionBtnHtml = `<button type="button" class="btn btn-outline btn-sm btn-auth-trigger">Postuler</button>`;
+            actionBtnHtml = `<button type="button" class="btn btn-project-apply btn-auth-trigger">Postuler →</button>`;
         }
 
+        const companyName = escapeHtml(p.creator_name || `Projet #${p.id}`);
+        const logoUrl = resolveMediaUrl(p.creator_logo);
+        const initials = (p.creator_name || "DE").substring(0, 2).toUpperCase();
+        const companyVisual = logoUrl
+          ? `<div class="project-company-frame"><img src="${escapeHtml(logoUrl)}" alt="" loading="lazy" /></div>`
+          : `<div class="project-company-frame project-company-frame--fallback" aria-hidden="true">${escapeHtml(initials)}</div>`;
+        const desc = escapeHtml(
+          p.description.length > 140 ? p.description.substring(0, 140) + "…" : p.description
+        );
+        const budgetLabel = formatBudget(p.budget);
+        const statusLabel = formatStatusLabel(p.status);
+        const appsHint =
+          p.application_count > 0
+            ? `<span class="project-card-apps">${p.application_count} candidature${p.application_count > 1 ? "s" : ""}</span>`
+            : "";
+
         article.innerHTML = `
-          <div class="project-top">
-            <div class="project-company-info">
-              <span class="project-company-name">${p.creator_name || `Projet #${p.id}`}</span>
+          <div class="project-card-inner">
+            <header class="project-top">
+              <div class="project-company-info">
+                ${companyVisual}
+                <span class="project-company-name">${companyName}</span>
+              </div>
+              <div class="project-top-end">
+                <span class="project-card-badge">${escapeHtml(statusLabel)}</span>
+                ${appsHint}
+              </div>
+            </header>
+            <h3 class="project-title">${escapeHtml(p.title)}</h3>
+            <p class="project-description">${desc}</p>
+            <div class="project-meta">
+              <span class="project-tag-pill">${escapeHtml(p.category)}</span>
+              <span class="project-meta-dot" aria-hidden="true">·</span>
+              <span class="project-tag-pill">${escapeHtml(p.level)}</span>
             </div>
-            <span class="project-rating">${p.status}</span>
-          </div>
-          <h3>${p.title}</h3>
-          <p>${p.description.length > 150 ? p.description.substring(0, 150) + "..." : p.description}</p>
-          <div class="project-meta">
-            <span>${p.category}</span><span>·</span><span>${p.level}</span>
-          </div>
-          <div class="project-stats" style="margin-top: auto; margin-bottom: 4px;">
-            <div><strong>${p.application_count || 0}</strong><span>candidatures</span></div>
-            <div><strong>${p.level}</strong><span>niveau</span></div>
-            <div><strong>${p.budget}</strong><span>budget</span></div>
-          </div>
-          <div class="project-footer" style="margin-top: 8px;">
-            <div class="project-action-wrapper" style="width: 100%; display: flex; justify-content: flex-end;">
+            <footer class="project-footer">
+              <span class="project-budget">${escapeHtml(budgetLabel)}</span>
               ${actionBtnHtml}
-            </div>
+            </footer>
           </div>
         `;
         grid.appendChild(article);
     });
 
-    // Bind apply buttons
     grid.querySelectorAll(".btn-apply-now").forEach(btn => {
         btn.addEventListener("click", () => {
             const pId = btn.getAttribute("data-project-id");
             if (window.applyToProject) {
                 window.applyToProject(pId).then(() => {
-                    // Re-load projects to reflect newly applied status
                     loadAllProjects();
                 });
             }
         });
     });
 
-    // Bind auth trigger buttons
     grid.querySelectorAll(".btn-auth-trigger").forEach(btn => {
         btn.addEventListener("click", () => {
             if (window.openModal) {
@@ -183,7 +222,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     try {
         const projects = await window.api.get("/projects/");
-        
+
         let studentAppsMap = {};
         const user = window.currentUser;
         if (user && (user.role.toLowerCase().includes("étudiant") || user.role.toLowerCase().includes("student"))) {
@@ -200,7 +239,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 console.error("Failed to load student applications", err);
             }
         }
-        
+
         renderRealProjects(projects, studentAppsMap);
     } catch (err) {
         console.error("Erreur récupération projets", err);
@@ -208,7 +247,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // Handle dynamic updates
   document.addEventListener("devearn:session-ready", () => {
       loadAllProjects();
   });
@@ -219,7 +257,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
   });
 
-  // Call on load
   if (window.api) {
       loadAllProjects();
   } else {

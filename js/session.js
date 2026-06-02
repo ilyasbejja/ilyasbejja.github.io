@@ -100,7 +100,8 @@
     
     // XP badge ONLY for students — not for Entreprises or Lauréats
     if (isStudentRole(user.role)) {
-        userName.innerHTML = `${user.full_name} <span style="color:var(--primary); margin-left:4px; font-size:0.82rem; font-weight:600; padding:2px 8px; background:rgba(31,199,160,0.1); border-radius:10px;" title="Expérience">150 XP</span>`;
+        const xpPoints = user.xp_points ?? 150;
+        userName.innerHTML = `${user.full_name} <span class="header-xp-badge" title="Points d'expérience"><img src="./assets/icons/xp.svg" alt="" class="header-xp-icon" width="14" height="14" />${xpPoints}</span>`;
     } else {
         userName.textContent = user.full_name;
     }
@@ -116,7 +117,7 @@
     // Avatar
     const avatar = document.createElement("div");
     if (user.profile_picture) {
-        avatar.innerHTML = `<img src="${window.api.API_BASE_URL || 'http://127.0.0.1:8001'}${user.profile_picture}" style="width:100%; height:100%; object-fit:cover; border-radius:50%;" />`;
+        avatar.innerHTML = `<img src="${window.api.API_BASE_URL || 'http://127.0.0.1:8000'}${user.profile_picture}" style="width:100%; height:100%; object-fit:cover; border-radius:50%;" />`;
     } else {
         avatar.textContent = user.full_name.substring(0, 2).toUpperCase();
     }
@@ -365,24 +366,28 @@
 
     // Re-bind SPA links logic for the newly created elements
     if (window.bindSPALinks) window.bindSPALinks(navList);
+    if (window.bindModalTriggers) window.bindModalTriggers(navList);
   }
 
-  // ─── Gate navigation: redirect away from public sections ───
+  // ─── Gate navigation: redirect away from unauthorized sections (no flash on valid sections) ───
   function gateNavigation(user) {
     const currentHash = (window.location.hash || "").replace("#", "");
     const allowed = getAllowedSections(user.role);
     const defaultSection = getDefaultSection(user.role);
 
-    // If on a public section or no hash, redirect to user's default hub
-    if (!currentHash || PUBLIC_SECTIONS.includes(currentHash)) {
+    // If on empty hash (first load), set to default section
+    if (!currentHash) {
       window.location.hash = defaultSection;
       return;
     }
 
     // If on a section not allowed for their role, redirect
-    if (!allowed.includes(currentHash)) {
+    if (!PUBLIC_SECTIONS.includes(currentHash) && !allowed.includes(currentHash)) {
       window.location.hash = defaultSection;
+      return;
     }
+    
+    // DON'T redirect if already on a valid section - prevents flash on every click
   }
 
   // ─── Main session check ───
@@ -400,6 +405,20 @@
       window.currentUser = user;
       renderUserMenu(user);
       buildDynamicNavigation(user);
+      
+      // Check if email verification is required
+      if (!user.is_verified) {
+        // Force email verification modal
+        if (window.openModal) {
+          window.openModal("verify-email-modal");
+          const emailInput = document.getElementById("verify-email-input");
+          if (emailInput) emailInput.value = user.email;
+          const codeInput = document.getElementById("verify-code");
+          if (codeInput) codeInput.focus();
+        }
+        return;
+      }
+      
       gateNavigation(user);
 
       // Also gate on future hash changes
@@ -416,4 +435,5 @@
 
   document.addEventListener("DOMContentLoaded", checkSession);
 
+  window.checkSession = checkSession;
 })();

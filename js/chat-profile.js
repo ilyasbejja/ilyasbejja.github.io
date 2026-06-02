@@ -240,6 +240,13 @@
   if (chatForm) {
       chatForm.addEventListener("submit", async (e) => {
           e.preventDefault();
+          
+          const currentUserId = window.currentUser ? window.currentUser.id : null;
+          if (!currentUserId) {
+              if (window.showToast) window.showToast("Vous devez être connecté pour envoyer un message.", "error");
+              return;
+          }
+
           const input = document.getElementById("chat-input");
           const content = input.value.trim();
           
@@ -247,7 +254,7 @@
           
           // Optimistically show message
           const msg = {
-              sender_id: window.currentUser.id,
+              sender_id: currentUserId,
               receiver_id: currentChatData.otherUserId,
               project_id: currentChatData.projectId,
               content: content,
@@ -268,7 +275,11 @@
               container.scrollTop = container.scrollHeight;
           } catch (err) {
               console.error("Failed to send message", err);
-              alert("Erreur lors de l'envoi du message.");
+              if (window.showToast) {
+                  window.showToast("Erreur lors de l'envoi du message.", "error");
+              } else {
+                  alert("Erreur lors de l'envoi du message.");
+              }
           }
       });
   }

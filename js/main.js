@@ -425,8 +425,15 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* ── SPA LINK INTERCEPTION ──────────────────────────── */
-  function initializeSPALinks() {
-    document.querySelectorAll(".nav-list a, .footer-links-group a, .brand, [data-nav-to]").forEach((link) => {
+  function initializeSPALinks(scope) {
+    const links = scope instanceof Element
+      ? scope.querySelectorAll("a")
+      : document.querySelectorAll(".nav-list a, .footer-links-group a, .brand, [data-nav-to]");
+
+    links.forEach((link) => {
+      if (link.dataset.spaBound === "1") return;
+      link.dataset.spaBound = "1";
+
       if (link.dataset.navTo) {
         link.addEventListener("click", (e) => {
           e.preventDefault();
@@ -497,13 +504,20 @@ document.addEventListener("DOMContentLoaded", () => {
     document.body.style.overflow = "";
   }
 
-  function initializeModals() {
-    document.querySelectorAll("[data-open-modal]").forEach((btn) => {
+  function bindModalTriggers(root = document) {
+    const scope = root instanceof Element ? root : document;
+    scope.querySelectorAll("[data-open-modal]").forEach((btn) => {
+      if (btn.dataset.modalBound === "1") return;
+      btn.dataset.modalBound = "1";
       btn.addEventListener("click", (e) => {
         e.preventDefault();
         openModal(btn.getAttribute("data-open-modal"), btn);
       });
     });
+  }
+
+  function initializeModals() {
+    bindModalTriggers();
 
     document.querySelectorAll("[data-switch-modal]").forEach((btn) => {
       btn.addEventListener("click", (e) => {
@@ -620,6 +634,14 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  window.addEventListener("hashchange", () => {
+    const hash = window.location.hash.replace("#", "") || "accueil";
+    if (hash === "login" || hash === "register" || hash === "post-project-modal") return;
+    if (sections[hash]) {
+      showSection(hash);
+    }
+  });
+
   /* ── INITIALIZE ALL MODULES ─────────────────────────── */
   initializeTheme();
   initializeMobileMenu();
@@ -635,4 +657,5 @@ document.addEventListener("DOMContentLoaded", () => {
   // Expose modal functions globally
   window.openModal = openModal;
   window.closeModal = closeModal;
+  window.bindModalTriggers = bindModalTriggers;
 });

@@ -61,6 +61,9 @@
     return toast;
   }
 
+  window.showToast = showToast;
+  window.dismissToast = dismissToast;
+
   function dismissToast(toast) {
     toast.classList.remove("toast-visible");
     toast.classList.add("toast-out");
@@ -160,8 +163,14 @@
         form.reset();
         closeModal(document.getElementById("login-modal"));
         
-        // Reload to update session state
-        setTimeout(() => window.location.reload(), 1000);
+        // Run checkSession dynamically instead of full page reload to avoid flash
+        setTimeout(() => {
+          if (window.checkSession) {
+            window.checkSession();
+          } else {
+            window.location.reload();
+          }
+        }, 1000);
       } catch (err) {
         if (err.message && (err.message.includes("Email non vérifié") || err.status === 403)) {
             closeModal(document.getElementById("login-modal"));
@@ -171,7 +180,7 @@
                 verifyModal.classList.add("is-active");
                 verifyModal.setAttribute("aria-hidden", "false");
             }
-            showToast("Veuillez vérifier votre email avant de vous connecter.", "info", 5000);
+            showToast(err.message || "Veuillez vérifier votre email avant de vous connecter.", "info", 5000);
         } else {
             showToast(err.message || "Erreur de connexion. Vérifiez vos identifiants.", "error");
         }
@@ -441,9 +450,8 @@
 
             showToast("Profil mis à jour avec succès !", "success");
             closeModal(document.getElementById("profile-modal"));
-            
-            // Reload to refresh UI (optional, could just update DOM)
-            setTimeout(() => window.location.reload(), 1000);
+
+            // No hard reload: keep the user on the current page and preserve the current section.
         } catch (err) {
             showToast("Erreur lors de la mise à jour : " + err.message, "error");
         } finally {

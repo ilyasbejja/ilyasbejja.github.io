@@ -32,35 +32,21 @@
 
   <header class="site-header">
     <div class="container header-inner">
-      <div class="brand-wrapper" style="display: flex; align-items: center; gap: 12px;">
-        <a href="./index.html" class="brand" aria-label="Accueil DevEarn">
-          <span class="brand-mark" aria-hidden="true">
-            <span class="brand-dev">Dev</span><span class="brand-amp">&amp;</span><span class="brand-earn">Earn</span>
-          </span>
-        </a>
-        <span
-          style="color: var(--text-muted); opacity: 0.3; font-weight: 300; font-size: 1.2rem; user-select: none;">|</span>
-        <div class="header-partner-logos" style="display: flex; align-items: center; gap: 8px;">
-          <img src="./assets/images/INPT.svg" alt="INPT" class="header-cri-logo" style="height: 22px;" />
-          <span
-            style="color: var(--text-muted); opacity: 0.2; font-weight: 300; font-size: 0.9rem; user-select: none;">×</span>
-          <img src="./assets/images/ANRT.svg" alt="ANRT" class="header-cri-logo" style="height: 22px;" />
-          <span
-            style="color: var(--text-muted); opacity: 0.2; font-weight: 300; font-size: 0.9rem; user-select: none;">×</span>
-          <img src="./assets/images/Centre régional d'investissement - Maroc.svg" alt="CRI Maroc"
-            class="header-cri-logo" style="height: 22px;" />
-        </div>
-      </div>
+      <a href="./index.html" class="brand" aria-label="Accueil DevEarn">
+        <span class="brand-mark" aria-hidden="true">
+          <span class="brand-dev">Dev</span><span class="brand-amp">&amp;</span><span class="brand-earn">Earn</span>
+        </span>
+      </a>
       <nav class="main-nav" aria-label="Navigation principale">
         <button class="nav-toggle" type="button" aria-label="Ouvrir le menu">
           <span></span><span></span><span></span>
         </button>
         <ul class="nav-list">
-          <li><a href="./index.html" class="is-current">Accueil</a></li>
-          <li><a href="./projects.html">Projets</a></li>
-          <li><a href="./student-space.html">Étudiants</a></li>
-          <li><a href="./client-space.html">Entreprises</a></li>
-          <li><a href="./dashboard.html">Dashboard</a></li>
+          <li><a href="#accueil" class="is-current">Accueil</a></li>
+          <li><a href="#projects">Projets</a></li>
+          <li><a href="#students">Étudiants</a></li>
+          <li><a href="#clients">Entreprises</a></li>
+          <li><a href="#dashboard">Dashboard</a></li>
         </ul>
       </nav>
       <div class="header-actions">
@@ -1158,6 +1144,22 @@
           </span>
         </a>
         <p>Plateforme marocaine de talents IT.</p>
+        <div class="footer-institutional" aria-label="Partenaires institutionnels">
+          <p class="footer-institutional-label">Initiative soutenue par</p>
+          <div class="footer-partners-row">
+            <div class="footer-partner-mark footer-partner-mark--inpt">
+              <img src="./assets/images/INPT.svg" alt="INPT" width="72" height="22" loading="lazy" decoding="async" />
+            </div>
+            <span class="footer-partner-dot" aria-hidden="true"></span>
+            <div class="footer-partner-mark footer-partner-mark--anrt">
+              <img src="./assets/images/ANRT.svg" alt="ANRT" width="56" height="18" loading="lazy" decoding="async" />
+            </div>
+            <span class="footer-partner-dot" aria-hidden="true"></span>
+            <div class="footer-partner-mark footer-partner-mark--cri">
+              <img src="./assets/images/Centre régional d'investissement - Maroc.svg" alt="CRI Maroc" width="84" height="22" loading="lazy" decoding="async" />
+            </div>
+          </div>
+        </div>
       </div>
       <div class="footer-links-group">
         <span class="footer-title">Navigation</span>
